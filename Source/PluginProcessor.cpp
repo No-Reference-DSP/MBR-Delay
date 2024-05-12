@@ -153,6 +153,7 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         const int leftChannel = 0;
         float leftSample = buffer.getSample(leftChannel, sample);
         // call delay
+        DBG(leftSample);
         
     }
     /*

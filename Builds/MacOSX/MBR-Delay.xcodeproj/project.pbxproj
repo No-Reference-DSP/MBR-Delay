@@ -86,6 +86,7 @@
 		FC0CC35D2BEC31C90064F644 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B186394ADDA93CABBEF4967A /* QuartzCore.framework */; };
 		FC0CC35E2BEC31C90064F644 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B23668ADA33F1EC6593C4 /* WebKit.framework */; };
 		FC0CC3682BEDD4D70064F644 /* Delay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC0CC3662BEDD4D70064F644 /* Delay.cpp */; };
+		FC0CC36B2BF139910064F644 /* Filter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FC0CC3692BF139910064F644 /* Filter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,8 @@
 		F91C44B2A0856E7439252852 /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		FC0CC3662BEDD4D70064F644 /* Delay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Delay.cpp; sourceTree = "<group>"; };
 		FC0CC3672BEDD4D70064F644 /* Delay.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Delay.hpp; sourceTree = "<group>"; };
+		FC0CC3692BF139910064F644 /* Filter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Filter.cpp; sourceTree = "<group>"; };
+		FC0CC36A2BF139910064F644 /* Filter.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Filter.hpp; sourceTree = "<group>"; };
 		FD90D82363ED917D31D2B53D /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXFileReference; lastKnownFileType = file.r; name = include_juce_audio_plugin_client_AU.r; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU.r; sourceTree = SOURCE_ROOT; };
 		FE9914C9052EB346B7B2C611 /* include_juce_audio_formats.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_formats.mm; path = ../../JuceLibraryCode/include_juce_audio_formats.mm; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -364,6 +367,8 @@
 				92606D9FC65C0D78AC7CB7D7 /* PluginEditor.h */,
 				FC0CC3662BEDD4D70064F644 /* Delay.cpp */,
 				FC0CC3672BEDD4D70064F644 /* Delay.hpp */,
+				FC0CC3692BF139910064F644 /* Filter.cpp */,
+				FC0CC36A2BF139910064F644 /* Filter.hpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -689,6 +694,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D8E4BF384FE7AC5E502D5E /* include_juce_audio_plugin_client_VST3.cpp in Sources */,
+				FC0CC36B2BF139910064F644 /* Filter.cpp in Sources */,
 				FC0CC3682BEDD4D70064F644 /* Delay.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

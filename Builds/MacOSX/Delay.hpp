@@ -8,12 +8,12 @@
 #ifndef Delay_hpp
 #define Delay_hpp
 
+#include <JuceHeader.h>
 #include <stdio.h>
 #include <iostream>
 #include <vector>
 #include <math.h>
 #include <stdexcept>
-#include <JuceHeader.h>
 
 using namespace std;
 
@@ -22,8 +22,8 @@ public:
     Delay();
     ~Delay();
     
-    float[] doLeftDelay();
-    float[] doRightDelay();
+    float doLeftDelay(float leftChannelData);
+    float doRightDelay();
     
     inline void setBufferSize();
     inline void setSampleRate();
@@ -31,13 +31,15 @@ public:
     
     
 private:
-    int max_buffer_size;
+    const int maxBufferSize;
     int readPointer;
     int writePointer;
     
     // what are some parts of the delay line that need to be established on
     // construction?
-//    float circularBufferLeft[];
-//    float circularBufferRight[];
+    
+    // Declaring these two arrays is undefined behavior, need fix
+//    float leftCircularBuffer[];
+//    float rightCircularBuffer[];
 };
 #endif /* Delay_hpp */
