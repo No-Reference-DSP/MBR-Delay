@@ -44,6 +44,9 @@ float Delay::doLeftDelay(float leftChannelData)
     // interpolation is something we will do later
     
     // return the data at buffer[readIndex]
+    cout << "left - modified: " << leftDelayBuffer[readIndex] + leftChannelData << endl;
+    DBG("left - modified");
+    DBG(leftDelayBuffer[readIndex]+leftChannelData);
     return leftDelayBuffer[readIndex] + leftChannelData;
 }
 
