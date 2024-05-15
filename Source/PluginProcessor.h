@@ -11,8 +11,6 @@
 #include <JuceHeader.h>
 #include "Delay.h"
 
-
-
 //==============================================================================
 /**
 */
@@ -58,7 +56,7 @@ public:
 
 private:
     // Delay Variables
-    Delay mDelay;
+    Delay mDelayBuffer;
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessor)
 };

@@ -95,6 +95,7 @@ void MBRDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+    mDelayBuffer.setReadIndex(sampleRate);
 }
 
 void MBRDelayAudioProcessor::releaseResources()
@@ -152,41 +153,19 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         // get left channel data
         const int leftChannel = 0;
         float leftSample = buffer.getSample(leftChannel, sample);
-        // call delay
-        DBG(leftSample);
+        float delayedLeftSample = mDelayBuffer.doLeftDelay(leftSample);
         
+        // get right channel data
+        const int rightChannel = 1;
+        float rightSample = buffer.getSample(rightChannel, sample);
+        float delayedRightSample = mDelayBuffer.doRightDelay(rightSample);
+        
+        // Adding it back to the channels
+        auto* channelData = buffer.getWritePointer(leftChannel);
+        channelData[sample] = delayedLeftSample;
+        channelData = buffer.getWritePointer(rightChannel);
+        channelData[sample] = delayedRightSample;
     }
-    /*
-     Each sample is processed individually.
-     I'm not sure if we iterate through the sample first or the channels first
-     
-     but I do know that we pass each float of each index per channel
-     the circular buffer gets updated per sample, per call to doDelayLeft() or doDelayRight()
-     and we return the updated value at that sample
-     
-     Lets say I have it right with the outer loop at sample and the inner loop as the channel
-     for(sample)
-        get the data from the leftChannel at index sample; leftChannel[sample]
-        we pass that data to doLeftDelay()
-            // we do the delay and return a float
-            // we can store that float for now
-        
-        get the data from the rightChannel at index sample; rightChannel[sample]
-        we pass that data to doRightDelay()
-            // we do the delay and return a float
-            // we can store that float for now
-     
-        // call filter
-        filter(leftFloat)
-        filter(rightFloat)
-        
-        get write pointer to the left channel
-        add it to left channel
-        get write pointer to the right channe
-        add it to the right channel
-        
-        should be good to send out this way
-     */
 }
 
 //==============================================================================
