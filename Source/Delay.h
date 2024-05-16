@@ -34,25 +34,14 @@ public:
         if(++writeIndex >= DELAY_BUFFER_SIZE)
             writeIndex = 0;
     }
-//    inline void incrementRead() {
-//        if(++readIndex >= DELAY_BUFFER_SIZE)
-//            readIndex = 0;
-//    }
     
-    inline int getReadIndex()
+    inline int getReadIndex(int delayTime)
     {
         // convert sampleRate to ms by /1000
         int rI = writeIndex - ((mSampleRate/1000) * delayTime);
-        bool outOfLowerBound = static_cast<int>(DELAY_BUFFER_SIZE - rI) < 0 ? true : false;
-        bool outOfUpperBound = static_cast<int>(DELAY_BUFFER_SIZE - rI) > DELAY_BUFFER_SIZE ? true : false;
         
         if(rI < 0)
-        {
-            if(outOfLowerBound || outOfUpperBound)
-                throw std::out_of_range("Not in valid range");
-            else
-                return static_cast<int>(DELAY_BUFFER_SIZE - rI);
-        }
+            return static_cast<int>(DELAY_BUFFER_SIZE - rI);
         
         return static_cast<int>(rI);
     }
@@ -70,7 +59,12 @@ private:
     int writeIndex = 0;
     
     // delayTime in miliseconds(ms), hardcoded for now
-    int delayTime = 100;
+    //int delayTime = 100;
+    int leftDelayTime = 200;
+    int rightDelayTime = 600;
+    
+    // feedback
+    float mFeedback = 0.7f;
     
     // sampleRate
     int mSampleRate = -1;

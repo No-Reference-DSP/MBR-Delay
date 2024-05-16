@@ -132,38 +132,25 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
 {
     juce::ScopedNoDenormals noDenormals;
 
-//    for (int channel = 0; channel < 2; ++channel)
-//    {
-//        //auto* channelData = buffer.getWritePointer (channel);
-//
-//        const int numSamples = buffer.getNumSamples();
-//        for(int sample = 0; sample < numSamples; sample++)
-//        {
-//            // iterate through the channels sample
-//            float smpl = buffer.getSample(channel, sample);
-//
-//        }
-//
-//    }
     const int numSamples = buffer.getNumSamples();
     for(int sample = 0; sample < numSamples; sample++)
     {
-        // get left channel data
+        // get left channel data and delay it
         const int leftChannel = 0;
         float leftSample = buffer.getSample(leftChannel, sample);
         float delayedLeftSample = mDelayBuffer.doLeftDelay(leftSample);
         
-        // get right channel data
+        // get right channel data and delay it
         const int rightChannel = 1;
         float rightSample = buffer.getSample(rightChannel, sample);
         float delayedRightSample = mDelayBuffer.doRightDelay(rightSample);
         
-        // Adding it back to the channels
+        // Add it back to the channels + the dry sample
         auto* channelData = buffer.getWritePointer(leftChannel);
-        channelData[sample] = delayedLeftSample;
+        channelData[sample] = delayedLeftSample + leftSample;
         
         channelData = buffer.getWritePointer(rightChannel);
-        channelData[sample] = delayedRightSample;
+        channelData[sample] = delayedRightSample + rightSample;
     }
 }
 

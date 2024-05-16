@@ -32,19 +32,15 @@ float Delay::doLeftDelay(float leftInput)
     
     float leftOutput = leftInput;
     
-    // insert into the delayBuffer
-    leftDelayBuffer[writeIndex] = leftOutput;
+    // calculate the readIndex
+    readIndex = getReadIndex(leftDelayTime);
     
-    // incremement the writePointer
-    incrementWrite();
+    // get the delayed signal
+    leftOutput = leftDelayBuffer[readIndex];
     
-    // calculate the read index
-    readIndex = getReadIndex();
-    
-    // interpolation is something we will do later
-    
-    // return the data at buffer[readIndex]
-    return leftDelayBuffer[readIndex] + leftInput;
+    // insert new signal
+    leftDelayBuffer[writeIndex] = leftInput + leftOutput * mFeedback;
+    return leftOutput;
 }
 
 float Delay::doRightDelay(float rightInput)
@@ -53,14 +49,15 @@ float Delay::doRightDelay(float rightInput)
     
     float rightOutput = rightInput;
     
-    // insert into the delayBuffer
-    rightDelayBuffer[writeIndex] = rightOutput;
+    // calculate the readIndex
+    readIndex = getReadIndex(rightDelayTime);
     
-    // calculate the read index
-    readIndex = getReadIndex();
+    // get the delayed signal
+    rightOutput = leftDelayBuffer[readIndex];
     
-    // interpolation is something we will do later
+    // insert new signal
+    leftDelayBuffer[writeIndex] = rightInput + rightOutput * mFeedback;
+    incrementWrite();
     
-    // return the data at buffer[readIndex] + out original input data
-    return rightDelayBuffer[readIndex] + rightInput;
+    return rightOutput;
 }
