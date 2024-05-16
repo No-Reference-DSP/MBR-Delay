@@ -93,9 +93,7 @@ void MBRDelayAudioProcessor::changeProgramName (int index, const juce::String& n
 //==============================================================================
 void MBRDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
-    // Use this method as the place to do any pre-playback
-    // initialisation that you need..
-    mDelayBuffer.setReadIndex(sampleRate);
+    mDelayBuffer.setSampleRate(sampleRate);
 }
 
 void MBRDelayAudioProcessor::releaseResources()
@@ -163,6 +161,7 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         // Adding it back to the channels
         auto* channelData = buffer.getWritePointer(leftChannel);
         channelData[sample] = delayedLeftSample;
+        
         channelData = buffer.getWritePointer(rightChannel);
         channelData[sample] = delayedRightSample;
     }

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="VaRf2P" name="MBR-Delay" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
+              pluginManufacturer="Apedustrial Software">
   <MAINGROUP id="DW7AHf" name="MBR-Delay">
     <GROUP id="{3A490CF6-BA0C-3274-ED27-66583290F6DC}" name="Source">
       <FILE id="w7Ztu2" name="PluginProcessor.cpp" compile="1" resource="0"

@@ -26,41 +26,41 @@ Delay::~Delay() {
      */
 }
 
-float Delay::doLeftDelay(float leftChannelData)
+float Delay::doLeftDelay(float leftInput)
 {
-    // processing sample by sample
-    float left = leftChannelData;
+    jassert(mSampleRate > 0);
+    
+    float leftOutput = leftInput;
     
     // insert into the delayBuffer
-    leftDelayBuffer[writeIndex] = left + leftChannelData;
+    leftDelayBuffer[writeIndex] = leftOutput;
     
     // incremement the writePointer
     incrementWrite();
     
     // calculate the read index
-    // we'll keep it simple for now
-    incrementRead();
+    readIndex = getReadIndex();
     
     // interpolation is something we will do later
     
     // return the data at buffer[readIndex]
-    cout << "left - modified: " << leftDelayBuffer[readIndex] + leftChannelData << endl;
-    DBG("left - modified");
-    DBG(leftDelayBuffer[readIndex]+leftChannelData);
-    return leftDelayBuffer[readIndex] + leftChannelData;
+    return leftDelayBuffer[readIndex] + leftInput;
 }
 
-float Delay::doRightDelay(float rightChannelData)
+float Delay::doRightDelay(float rightInput)
 {
-    // processing sample by sample
-    float right = rightChannelData;
+    jassert(mSampleRate > 0);
+    
+    float rightOutput = rightInput;
     
     // insert into the delayBuffer
-    rightDelayBuffer[writeIndex] = right + rightChannelData;
+    rightDelayBuffer[writeIndex] = rightOutput;
     
-    // we only need to call increments for one channel to do both channels
+    // calculate the read index
+    readIndex = getReadIndex();
+    
     // interpolation is something we will do later
     
-    // return the data at buffer[readIndex]
-    return rightDelayBuffer[readIndex] + rightChannelData;
+    // return the data at buffer[readIndex] + out original input data
+    return rightDelayBuffer[readIndex] + rightInput;
 }
