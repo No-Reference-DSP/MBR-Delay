@@ -145,12 +145,14 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         float rightSample = buffer.getSample(rightChannel, sample);
         float delayedRightSample = mDelayBuffer.doRightDelay(rightSample);
         
+        if(mMonoSwitch) convertStereoToMono(delayedLeftSample, delayedRightSample);
+        
         // Add it back to the channels + the dry sample
         auto* channelData = buffer.getWritePointer(leftChannel);
-        channelData[sample] = delayedLeftSample + leftSample;
+        channelData[sample] = (delayedLeftSample * mWetGain) + (leftSample * mDryGain);
         
         channelData = buffer.getWritePointer(rightChannel);
-        channelData[sample] = delayedRightSample + rightSample;
+        channelData[sample] = (delayedRightSample * mWetGain) + (rightSample * mDryGain);
     }
 }
 
@@ -184,4 +186,21 @@ void MBRDelayAudioProcessor::setStateInformation (const void* data, int sizeInBy
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
     return new MBRDelayAudioProcessor();
+}
+
+//==============================================================================
+// Functions to convert audio into mono
+void MBRDelayAudioProcessor::toggleMono()
+{
+    if(mMonoSwitch == true) mMonoSwitch = false;
+    else if(mMonoSwitch == false) mMonoSwitch = true;
+}
+
+void MBRDelayAudioProcessor::convertStereoToMono(float& leftChannelAudio, float& rightChannelAudio)
+{
+    leftChannelAudio += rightChannelAudio;
+    rightChannelAudio = leftChannelAudio;
+    
+    rightChannelAudio *= 0.6f;
+    leftChannelAudio  *= 0.6f;
 }

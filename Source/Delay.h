@@ -35,39 +35,45 @@ public:
             writeIndex = 0;
     }
     
-    inline int getReadIndex(int delayTime)
+    inline float getReadIndex(int delayTime)
     {
         // convert sampleRate to ms by /1000
-        int rI = writeIndex - ((mSampleRate/1000) * delayTime);
+        float rI = writeIndex - ((mSampleRate/1000) * delayTime);
         
         if(rI < 0)
-            return static_cast<int>(DELAY_BUFFER_SIZE - rI);
+            return DELAY_BUFFER_SIZE + rI;
         
-        return static_cast<int>(rI);
+        return rI;
     }
     
     inline void setSampleRate(double sampleRate)
     {
         mSampleRate = sampleRate;
     }
-//    inline void performInterpolation(float [], float [], double frac);
-
+    
+    inline float linearInterpolation(float bufferValOne, float bufferValTwo, float frac)
+    {
+        // linear interpolation [Dat 97]: y(n) = x(n-[M+1])frac + x(n-M)(1-frac)
+        // referenced from the book: DAFX: Digital Audio Effects, by Udo Zolzer
+        // bufferValOne = n-M, bufferValTwo = n - [M+1]
+        return (bufferValTwo * frac) + (bufferValOne * (1 - frac));
+    }
+    
     
 private:
-    // read and write index
-    int readIndex = 0;
+    // write index
     int writeIndex = 0;
     
     // delayTime in miliseconds(ms), hardcoded for now
     //int delayTime = 100;
-    int leftDelayTime = 200;
-    int rightDelayTime = 600;
+    int leftDelayTime = 600;
+    int rightDelayTime = 200;
     
     // feedback
     float mFeedback = 0.7f;
     
     // sampleRate
-    int mSampleRate = -1;
+    float mSampleRate = -1.0f;
     
     // delay buffer
     float leftDelayBuffer[DELAY_BUFFER_SIZE] = {0};

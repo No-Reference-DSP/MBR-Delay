@@ -32,11 +32,18 @@ float Delay::doLeftDelay(float leftInput)
     
     float leftOutput = leftInput;
     
-    // calculate the readIndex
-    readIndex = getReadIndex(leftDelayTime);
+    // calculate the readIndex as a float
+    float readIndex = getReadIndex(leftDelayTime);
+    int readAsInt = static_cast<int>(readIndex);
+    int readAsIntNext = readAsInt + 1 >= DELAY_BUFFER_SIZE ? 0 : readAsInt+1;
     
-    // get the delayed signal
-    leftOutput = leftDelayBuffer[readIndex];
+    // get the values from the buffer + frac
+    float bufferValOne = leftDelayBuffer[readAsInt];
+    float bufferValTwo = leftDelayBuffer[readAsIntNext];
+    float frac = readIndex - readAsInt;
+    
+    // perform interpolation and get delayedSignal
+    leftOutput = linearInterpolation(bufferValOne, bufferValTwo, frac);
     
     // insert new signal
     leftDelayBuffer[writeIndex] = leftInput + leftOutput * mFeedback;
@@ -49,14 +56,23 @@ float Delay::doRightDelay(float rightInput)
     
     float rightOutput = rightInput;
     
-    // calculate the readIndex
-    readIndex = getReadIndex(rightDelayTime);
+    // calculate the readIndex as a float
+    float readIndex = getReadIndex(rightDelayTime);
+    int readAsInt = static_cast<int>(readIndex);
+    int readAsIntNext = readAsInt + 1 >= DELAY_BUFFER_SIZE ? 0 : readAsInt+1;
     
-    // get the delayed signal
-    rightOutput = leftDelayBuffer[readIndex];
+    // get the values from the buffer + frac
+    float bufferValOne = rightDelayBuffer[readAsInt];
+    float bufferValTwo = rightDelayBuffer[readAsIntNext];
+    float frac = readIndex - readAsInt;
+    
+    // perform interlpoation and get delayed signal
+    rightOutput = linearInterpolation(bufferValOne, bufferValTwo, frac);
     
     // insert new signal
-    leftDelayBuffer[writeIndex] = rightInput + rightOutput * mFeedback;
+    rightDelayBuffer[writeIndex] = rightInput + rightOutput * mFeedback;
+    
+    // move write pointer only in right channel pipeline
     incrementWrite();
     
     return rightOutput;

@@ -53,10 +53,21 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+    
+    //===========================================
+    // creating functions to convert audio into mono
+    void toggleMono();
+    void convertStereoToMono(float& leftChannelAudio, float& rightChannelAudio);
 
 private:
     // Delay Variables
     Delay mDelayBuffer;
+    float mDryGain = 1.0f;
+    float mWetGain = 1.0f;
+    
+    // Mono Switch Variables
+    bool mMonoSwitch = true;
+    
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessor)
 };
