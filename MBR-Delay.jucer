@@ -15,8 +15,9 @@
     </GROUP>
     <FILE id="uLgqo2" name="Delay.cpp" compile="1" resource="0" file="Source/Delay.cpp"/>
     <FILE id="Wq6etK" name="Delay.h" compile="0" resource="0" file="Source/Delay.h"/>
-    <FILE id="wqsRJy" name="Filter.cpp" compile="1" resource="0" file="Source/Filter.cpp"/>
-    <FILE id="V2V8vF" name="Filter.h" compile="0" resource="0" file="Source/Filter.h"/>
+    <FILE id="w6b1k4" name="LowpassFilter.cpp" compile="1" resource="0"
+          file="Source/LowpassFilter.cpp"/>
+    <FILE id="SIo5j8" name="LowpassFilter.h" compile="0" resource="0" file="Source/LowpassFilter.h"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>

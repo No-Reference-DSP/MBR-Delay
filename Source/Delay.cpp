@@ -47,6 +47,7 @@ float Delay::doLeftDelay(float leftInput)
     
     // insert new signal
     leftDelayBuffer[writeIndex] = leftInput + leftOutput * mFeedback;
+    
     return leftOutput;
 }
 

@@ -67,7 +67,7 @@ private:
     // delayTime in miliseconds(ms), hardcoded for now
     //int delayTime = 100;
     int leftDelayTime = 600;
-    int rightDelayTime = 200;
+    int rightDelayTime = 600;
     
     // feedback
     float mFeedback = 0.7f;

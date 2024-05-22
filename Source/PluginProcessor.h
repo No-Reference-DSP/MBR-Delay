@@ -66,7 +66,7 @@ private:
     float mWetGain = 1.0f;
     
     // Mono Switch Variables
-    bool mMonoSwitch = true;
+    bool mMonoSwitch = false;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessor)
