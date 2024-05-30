@@ -49,7 +49,6 @@
 		96C00A3D1FD080B61D18EB74 /* include_juce_audio_basics.mm */ = {isa = PBXBuildFile; fileRef = 516E676948A654ECCD6F2689; };
 		9D354F2236CC5094C13FC124 /* include_juce_audio_plugin_client_utils.cpp */ = {isa = PBXBuildFile; fileRef = 7408172C691630E69CC12459; };
 		A0697B39C81D07FF37B6B927 /* PluginEditor.cpp */ = {isa = PBXBuildFile; fileRef = 348E51845AE8EEAFC563D2EB; };
-		A0F7AC56696749D3FD394B80 /* LowpassFilter.cpp */ = {isa = PBXBuildFile; fileRef = AA693B586737A990C1E3E9DB; };
 		A348FE2BC0CE408B645DD63D /* CoreMIDI.framework */ = {isa = PBXBuildFile; fileRef = E3E2CECCEE11F48BC8B44AC3; };
 		AE1045F3AEED1C98EB12004E /* include_juce_gui_extra.mm */ = {isa = PBXBuildFile; fileRef = 66E647C8241CBEAA5B6089C1; };
 		B4D6EFDB3DD72000F58F7685 /* include_juce_audio_plugin_client_AU_2.mm */ = {isa = PBXBuildFile; fileRef = 0E4862FC2E88DE5FDEA66E64; };
@@ -81,7 +80,6 @@
 		348E51845AE8EEAFC563D2EB /* PluginEditor.cpp */ /* PluginEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = SOURCE_ROOT; };
 		3495FFF091B408287967A557 /* Carbon.framework */ /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		3546B5E9EE02BC3BECE8E832 /* Accelerate.framework */ /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		39D2AC6CA080EA076FF3F167 /* LowpassFilter.h */ /* LowpassFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LowpassFilter.h; path = ../../Source/LowpassFilter.h; sourceTree = SOURCE_ROOT; };
 		3B85FB6B712A7AC327B4557C /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
 		45C1F113F722B573EE05D95E /* juce_audio_utils */ /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_utils; path = "~/JUCE/modules/juce_audio_utils"; sourceTree = "<absolute>"; };
 		46FC45A31DCED497D075521A /* Info-VST3.plist */ /* Info-VST3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-VST3.plist"; path = "Info-VST3.plist"; sourceTree = SOURCE_ROOT; };
@@ -108,7 +106,6 @@
 		9CC2C1F2243F8D124A3E8E0E /* AU */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBR-Delay.component"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9D745B7DC865A9FC33701C0 /* include_juce_audio_plugin_client_VST_utils.mm */ /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		AA4D23A36FF0062DD15E071A /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
-		AA693B586737A990C1E3E9DB /* LowpassFilter.cpp */ /* LowpassFilter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = LowpassFilter.cpp; path = ../../Source/LowpassFilter.cpp; sourceTree = SOURCE_ROOT; };
 		AD0F6DAE8499C59B663ABA21 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = "~/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
 		B186394ADDA93CABBEF4967A /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B48E4235C3BB9F53BD8729A4 /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
@@ -214,8 +211,6 @@
 				9E6B78F3D7A04A44DD8270EB,
 				8F4CC4518FE427F86F8840D3,
 				8BC7B9B506479BD88AB565FD,
-				AA693B586737A990C1E3E9DB,
-				39D2AC6CA080EA076FF3F167,
 			);
 			name = "MBR-Delay";
 			sourceTree = "<group>";
@@ -589,7 +584,6 @@
 				5AEA65C07C1563F7FBEFD46E,
 				A0697B39C81D07FF37B6B927,
 				1B3C99289C39713439DCF59F,
-				A0F7AC56696749D3FD394B80,
 				96C00A3D1FD080B61D18EB74,
 				0C97E591F29232A99EF3E223,
 				61544D59D37D9D07DD4AA5DF,

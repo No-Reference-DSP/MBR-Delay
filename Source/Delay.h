@@ -12,10 +12,7 @@
 
 #include <JuceHeader.h>
 #include <stdio.h>
-#include <iostream>
-#include <vector>
 #include <math.h>
-#include <stdexcept>
 
 #define DELAY_BUFFER_SIZE (44100 * 4)
 
