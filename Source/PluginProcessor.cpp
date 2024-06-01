@@ -149,10 +149,10 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         
         // Add it back to the channels + the dry sample
         auto* channelData = buffer.getWritePointer(leftChannel);
-        channelData[sample] = (delayedLeftSample * mWetGain) + (leftSample * mDryGain);
+        channelData[sample] = (leftSample * mDryGain) + (delayedLeftSample * mWetGain);
         
         channelData = buffer.getWritePointer(rightChannel);
-        channelData[sample] = (delayedRightSample * mWetGain) + (rightSample * mDryGain);
+        channelData[sample] = (rightSample * mDryGain) +(delayedRightSample * mWetGain);
     }
 }
 

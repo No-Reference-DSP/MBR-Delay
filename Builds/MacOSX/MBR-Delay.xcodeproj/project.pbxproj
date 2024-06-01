@@ -43,6 +43,7 @@
 		5AEA65C07C1563F7FBEFD46E /* PluginProcessor.cpp */ = {isa = PBXBuildFile; fileRef = 04D63178BAB75DCFE024DD67; };
 		61544D59D37D9D07DD4AA5DF /* include_juce_audio_formats.mm */ = {isa = PBXBuildFile; fileRef = FE9914C9052EB346B7B2C611; };
 		656D0384DAC6C05EB6698E95 /* Accelerate.framework */ = {isa = PBXBuildFile; fileRef = 3546B5E9EE02BC3BECE8E832; };
+		65AB3D1DEED8BC16B206FE85 /* ButterworthLowpass.cpp */ = {isa = PBXBuildFile; fileRef = 41BD6746F5F7E75BA659D4D4; };
 		6E0AE3854189D11546E68962 /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXBuildFile; fileRef = A9D745B7DC865A9FC33701C0; };
 		89C312A81E9AC83091844B3A /* include_juce_audio_plugin_client_AU_1.mm */ = {isa = PBXBuildFile; fileRef = 782EE5FB3E966690A791F0EB; };
 		8C8D4ED530D5F9A8C6894E30 /* CoreAudio.framework */ = {isa = PBXBuildFile; fileRef = EA500D11B88BDB0054AC9139; };
@@ -61,6 +62,7 @@
 		E63C1D4A060F8A7CFBF9867B /* AudioUnit.framework */ = {isa = PBXBuildFile; fileRef = 6B73BB0B5A9EC457CE028971; };
 		E738769A36235AC41BC957B2 /* include_juce_dsp.mm */ = {isa = PBXBuildFile; fileRef = 0D2521045CA61260FB4D677D; };
 		E7D8E4BF384FE7AC5E502D5E /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXBuildFile; fileRef = B96F396D2D11589A7C3C1C6D; };
+		F0F1AE21A321FF3C0A795857 /* ButterworthHighpass.cpp */ = {isa = PBXBuildFile; fileRef = FEA3B9D27255E1FB5867D750; };
 		F3F21C69CE0565C7F66C3F23 /* include_juce_graphics.mm */ = {isa = PBXBuildFile; fileRef = 47A34A1E083385C10319603B; };
 		F5AD72BA8E633EB52BB47855 /* include_juce_gui_basics.mm */ = {isa = PBXBuildFile; fileRef = E938B124EE37ACAD12B27EB6; };
 		F9C5173FDF0D7225A8A158F0 /* include_juce_audio_plugin_client_Standalone.cpp */ = {isa = PBXBuildFile; fileRef = 8D8FD66FF31D7F81A2D5AE3E; };
@@ -81,6 +83,8 @@
 		3495FFF091B408287967A557 /* Carbon.framework */ /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		3546B5E9EE02BC3BECE8E832 /* Accelerate.framework */ /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3B85FB6B712A7AC327B4557C /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
+		3BCE02637388E81938D35A9E /* ButterworthLowpass.h */ /* ButterworthLowpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ButterworthLowpass.h; path = ../../Source/ButterworthLowpass.h; sourceTree = SOURCE_ROOT; };
+		41BD6746F5F7E75BA659D4D4 /* ButterworthLowpass.cpp */ /* ButterworthLowpass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ButterworthLowpass.cpp; path = ../../Source/ButterworthLowpass.cpp; sourceTree = SOURCE_ROOT; };
 		45C1F113F722B573EE05D95E /* juce_audio_utils */ /* juce_audio_utils */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_utils; path = "~/JUCE/modules/juce_audio_utils"; sourceTree = "<absolute>"; };
 		46FC45A31DCED497D075521A /* Info-VST3.plist */ /* Info-VST3.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-VST3.plist"; path = "Info-VST3.plist"; sourceTree = SOURCE_ROOT; };
 		4727BFB9FCAF983DE19F1293 /* juce_audio_devices */ /* juce_audio_devices */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_devices; path = "~/JUCE/modules/juce_audio_devices"; sourceTree = "<absolute>"; };
@@ -104,6 +108,7 @@
 		92606D9FC65C0D78AC7CB7D7 /* PluginEditor.h */ /* PluginEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginEditor.h; path = ../../Source/PluginEditor.h; sourceTree = SOURCE_ROOT; };
 		9328BB5D4687BE896581EE89 /* VST3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBR-Delay.vst3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC2C1F2243F8D124A3E8E0E /* AU */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBR-Delay.component"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D13BB8B2859570372172988 /* ButterworthHighpass.h */ /* ButterworthHighpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ButterworthHighpass.h; path = ../../Source/ButterworthHighpass.h; sourceTree = SOURCE_ROOT; };
 		A9D745B7DC865A9FC33701C0 /* include_juce_audio_plugin_client_VST_utils.mm */ /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		AA4D23A36FF0062DD15E071A /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
 		AD0F6DAE8499C59B663ABA21 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = "~/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
@@ -128,6 +133,7 @@
 		F91C44B2A0856E7439252852 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
 		FD90D82363ED917D31D2B53D /* include_juce_audio_plugin_client_AU.r */ /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXFileReference; lastKnownFileType = file.r; name = include_juce_audio_plugin_client_AU.r; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU.r; sourceTree = SOURCE_ROOT; };
 		FE9914C9052EB346B7B2C611 /* include_juce_audio_formats.mm */ /* include_juce_audio_formats.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_formats.mm; path = ../../JuceLibraryCode/include_juce_audio_formats.mm; sourceTree = SOURCE_ROOT; };
+		FEA3B9D27255E1FB5867D750 /* ButterworthHighpass.cpp */ /* ButterworthHighpass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ButterworthHighpass.cpp; path = ../../Source/ButterworthHighpass.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +215,10 @@
 			isa = PBXGroup;
 			children = (
 				9E6B78F3D7A04A44DD8270EB,
+				FEA3B9D27255E1FB5867D750,
+				9D13BB8B2859570372172988,
+				41BD6746F5F7E75BA659D4D4,
+				3BCE02637388E81938D35A9E,
 				8F4CC4518FE427F86F8840D3,
 				8BC7B9B506479BD88AB565FD,
 			);
@@ -583,6 +593,8 @@
 			files = (
 				5AEA65C07C1563F7FBEFD46E,
 				A0697B39C81D07FF37B6B927,
+				F0F1AE21A321FF3C0A795857,
+				65AB3D1DEED8BC16B206FE85,
 				1B3C99289C39713439DCF59F,
 				96C00A3D1FD080B61D18EB74,
 				0C97E591F29232A99EF3E223,

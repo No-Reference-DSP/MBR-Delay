@@ -13,6 +13,8 @@
 #include <JuceHeader.h>
 #include <stdio.h>
 #include <math.h>
+#include "ButterworthLowpass.h"
+#include "ButterworthHighpass.h"
 
 #define DELAY_BUFFER_SIZE (44100 * 4)
 
@@ -26,12 +28,44 @@ public:
     float doLeftDelay(float leftChannelData);
     float doRightDelay(float rightChannelData);
     
+    // Setters
     inline void incrementWrite()
     {
         if(++writeIndex >= DELAY_BUFFER_SIZE)
             writeIndex = 0;
     }
     
+    inline void setSampleRate(double sampleRate)
+    {
+        mSampleRate = sampleRate;
+        
+        // for the filters
+        mLeftLowpass.setSampleRate(sampleRate);
+        mRightLowpass.setSampleRate(sampleRate);
+        
+        mLeftHighpass.setSampleRate(sampleRate);
+        mRightHighpass.setSampleRate(sampleRate);
+    }
+    
+    void reset()
+    {
+        writeIndex = 0;
+        leftDelayTime = 200;
+        rightDelayTime = 200;
+        mFeedback = 0.7f;
+        
+        memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE-1);
+        memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE-1);
+        
+        // reset filters as well
+        mLeftLowpass.reset();
+        mRightLowpass.reset();
+        
+        mLeftHighpass.reset();
+        mRightHighpass.reset();
+    }
+    
+    // Getters
     inline float getReadIndex(int delayTime)
     {
         // convert sampleRate to ms by /1000
@@ -41,11 +75,6 @@ public:
             return DELAY_BUFFER_SIZE + rI;
         
         return rI;
-    }
-    
-    inline void setSampleRate(double sampleRate)
-    {
-        mSampleRate = sampleRate;
     }
     
     inline float linearInterpolation(float bufferValOne, float bufferValTwo, float frac)
@@ -67,7 +96,7 @@ private:
     int rightDelayTime = 600;
     
     // feedback
-    float mFeedback = 0.7f;
+    float mFeedback = 0.3f;
     
     // sampleRate
     float mSampleRate = -1.0f;
@@ -75,4 +104,11 @@ private:
     // delay buffer
     float leftDelayBuffer[DELAY_BUFFER_SIZE] = {0};
     float rightDelayBuffer[DELAY_BUFFER_SIZE] = {0};
+    
+    // filters
+    ButterworthLowpass mLeftLowpass;
+    ButterworthLowpass mRightLowpass;
+    
+    ButterworthHighpass mLeftHighpass;
+    ButterworthHighpass mRightHighpass;
 };

@@ -13,6 +13,14 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="mLU3W0" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
+    <FILE id="tZOW2G" name="ButterworthHighpass.cpp" compile="1" resource="0"
+          file="Source/ButterworthHighpass.cpp"/>
+    <FILE id="B7PuLI" name="ButterworthHighpass.h" compile="0" resource="0"
+          file="Source/ButterworthHighpass.h"/>
+    <FILE id="dLJBIU" name="ButterworthLowpass.cpp" compile="1" resource="0"
+          file="Source/ButterworthLowpass.cpp"/>
+    <FILE id="xinifk" name="ButterworthLowpass.h" compile="0" resource="0"
+          file="Source/ButterworthLowpass.h"/>
     <FILE id="uLgqo2" name="Delay.cpp" compile="1" resource="0" file="Source/Delay.cpp"/>
     <FILE id="Wq6etK" name="Delay.h" compile="0" resource="0" file="Source/Delay.h"/>
   </MAINGROUP>

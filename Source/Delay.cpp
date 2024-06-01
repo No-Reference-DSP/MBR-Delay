@@ -12,8 +12,7 @@
 
 // Constructor
 Delay::Delay() {
-    // this is where I'll initialize data for filters and other parameters that are not
-    // given by PluginProcessor
+   
 }
 
 // Destructor
@@ -31,6 +30,8 @@ float Delay::doLeftDelay(float leftInput)
     jassert(mSampleRate > 0);
     
     float leftOutput = leftInput;
+    mLeftLowpass.update(); // update lowpass filter
+    mLeftHighpass.update(); // update highpass filter
     
     // calculate the readIndex as a float
     float readIndex = getReadIndex(leftDelayTime);
@@ -48,7 +49,11 @@ float Delay::doLeftDelay(float leftInput)
     // insert new signal
     leftDelayBuffer[writeIndex] = leftInput + leftOutput * mFeedback;
     
-    return leftOutput;
+    // filter signal then output
+    float filteredOutput = mLeftLowpass.filter(leftOutput);
+    filteredOutput = mLeftHighpass.filter(filteredOutput);
+    
+    return filteredOutput;
 }
 
 float Delay::doRightDelay(float rightInput)
@@ -56,6 +61,8 @@ float Delay::doRightDelay(float rightInput)
     jassert(mSampleRate > 0);
     
     float rightOutput = rightInput;
+    mRightLowpass.update(); // update lowpass filter
+    mRightHighpass.update(); // update highpass filter
     
     // calculate the readIndex as a float
     float readIndex = getReadIndex(rightDelayTime);
@@ -75,6 +82,10 @@ float Delay::doRightDelay(float rightInput)
     
     // move write pointer only in right channel pipeline
     incrementWrite();
+
+    // return filtered signal
+    float filteredOutput = mRightLowpass.filter(rightOutput);
+    filteredOutput = mRightHighpass.filter(filteredOutput);
     
-    return rightOutput;
+    return filteredOutput;
 }
