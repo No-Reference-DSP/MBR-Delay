@@ -11,8 +11,9 @@
 #include "Delay.h"
 
 // Constructor
-Delay::Delay() {
-   
+Delay::Delay()
+: writeIndex(0), mSmoothedLeftDelayTime(200), mSmoothedRightDelayTime(200), mSampleRate(-1.0f)
+{
 }
 
 // Destructor
@@ -32,6 +33,7 @@ float Delay::doLeftDelay(float leftInput)
     float leftOutput = leftInput;
     mLeftLowpass.update(); // update lowpass filter
     mLeftHighpass.update(); // update highpass filter
+    updateTimeDelay(); // call only on left channel 
     
     // calculate the readIndex as a float
     float readIndex = getReadIndex(leftDelayTime);
@@ -46,8 +48,11 @@ float Delay::doLeftDelay(float leftInput)
     // perform interpolation and get delayedSignal
     leftOutput = linearInterpolation(bufferValOne, bufferValTwo, frac);
     
+    // smooth feedback
+    mSmoothedFeedback.setTargetValue(mFeedback);
+
     // insert new signal
-    leftDelayBuffer[writeIndex] = leftInput + leftOutput * mFeedback;
+    leftDelayBuffer[writeIndex] = leftInput + leftOutput * mSmoothedFeedback.getNextValue();
     
     // filter signal then output
     float filteredOutput = mLeftLowpass.filter(leftOutput);

@@ -19,7 +19,14 @@ MBRDelayAudioProcessor::MBRDelayAudioProcessor()
                       #endif
                        .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
                      #endif
-                       )
+                       ),
+treeState(*this, nullptr, "PARAMETERS",
+          {
+    std::make_unique<juce::AudioParameterInt>("mFeedback", "Feedback", 0, 150, 15),
+    std::make_unique<juce::AudioParameterInt>("mLeftDelay", "LeftDelay", 0, 4000, 200),
+    std::make_unique<juce::AudioParameterInt>("mRightDelay", "RightDelay", 0, 4000, 200)
+}),
+        mFeedback(15)
 #endif
 {
 }
@@ -93,7 +100,12 @@ void MBRDelayAudioProcessor::changeProgramName (int index, const juce::String& n
 //==============================================================================
 void MBRDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
 {
+    // setup
     mDelayBuffer.setSampleRate(sampleRate);
+    mDelayBuffer.setFeedback(mFeedback);
+    mDelayBuffer.setTimeDelay("left", 200);
+    mDelayBuffer.setTimeDelay("right", 200);
+
 }
 
 void MBRDelayAudioProcessor::releaseResources()
@@ -203,4 +215,16 @@ void MBRDelayAudioProcessor::convertStereoToMono(float& leftChannelAudio, float&
     
     rightChannelAudio *= 0.6f;
     leftChannelAudio  *= 0.6f;
+}
+
+// Public functions for Module mods
+void MBRDelayAudioProcessor::adjustFeedback(double fb)
+{
+    mDelayBuffer.setFeedback(fb);
+}
+
+void MBRDelayAudioProcessor::adjustTimeDelay(std::string name, int ms)
+{
+    
+    mDelayBuffer.setTimeDelay(name, ms);
 }

@@ -13,10 +13,11 @@
 #include <JuceHeader.h>
 #include <stdio.h>
 #include <math.h>
+#include <string>
 #include "ButterworthLowpass.h"
 #include "ButterworthHighpass.h"
 
-#define DELAY_BUFFER_SIZE (44100 * 4)
+#define DELAY_BUFFER_SIZE (192000 * 2)
 
 using namespace std;
 
@@ -45,13 +46,39 @@ public:
         
         mLeftHighpass.setSampleRate(sampleRate);
         mRightHighpass.setSampleRate(sampleRate);
+        
+        // for the smoothing
+        mSmoothedFeedback.reset(sampleRate, 0.05);
+        mSmoothedLeftDelayTime.reset(sampleRate, 0.03);
+        mSmoothedRightDelayTime.reset(sampleRate, 0.03);
+    }
+    
+    inline void setFeedback(double fb) {
+        mFeedback = fb*0.01;
+    }
+    
+    inline void setTimeDelay(std::string name, int ms)
+    {
+        if(name == "left")
+        {
+            mSmoothedLeftDelayTime.setTargetValue(ms);
+        }
+        else if(name == "right")
+        {
+            mSmoothedRightDelayTime.setTargetValue(ms);
+        }
+    }
+    
+    inline void updateTimeDelay(){
+        leftDelayTime = mSmoothedLeftDelayTime.getNextValue();
+        rightDelayTime = mSmoothedRightDelayTime.getNextValue();
     }
     
     void reset()
     {
         writeIndex = 0;
-        leftDelayTime = 200;
-        rightDelayTime = 200;
+        leftDelayTime = 600;
+        rightDelayTime = 600;
         mFeedback = 0.7f;
         
         memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE-1);
@@ -88,18 +115,21 @@ public:
     
 private:
     // write index
-    int writeIndex = 0;
+    int writeIndex;
     
     // delayTime in miliseconds(ms), hardcoded for now
     //int delayTime = 100;
-    int leftDelayTime = 600;
-    int rightDelayTime = 600;
+    int leftDelayTime;
+    juce::SmoothedValue<int, juce::ValueSmoothingTypes::Linear> mSmoothedLeftDelayTime;
+    int rightDelayTime;
+    juce::SmoothedValue<int, juce::ValueSmoothingTypes::Linear> mSmoothedRightDelayTime;
     
-    // feedback
-    float mFeedback = 0.3f;
+    // feedback + smoothing
+    float mFeedback;
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> mSmoothedFeedback;
     
     // sampleRate
-    float mSampleRate = -1.0f;
+    float mSampleRate;
     
     // delay buffer
     float leftDelayBuffer[DELAY_BUFFER_SIZE] = {0};

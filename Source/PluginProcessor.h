@@ -10,6 +10,7 @@
 
 #include <JuceHeader.h>
 #include "Delay.h"
+#include <string>
 
 //==============================================================================
 /**
@@ -58,8 +59,22 @@ public:
     // creating functions to convert audio into mono
     void toggleMono();
     void convertStereoToMono(float& leftChannelAudio, float& rightChannelAudio);
+    
+    // Public functions for Delay mods
+    void adjustFeedback(double fb);
+    void adjustTimeDelay(std::string name, int ms);
+    
+    // Processor State Tree
+    juce::AudioProcessorValueTreeState treeState;
 
 private:
+    // Feedback vars
+    int mFeedback;
+    
+    // Time Delay vars
+    int mLeftDelay;
+    int mRightDelay;
+    
     // Delay Variables
     Delay mDelayBuffer;
     float mDryGain = 1.0f;

@@ -4,6 +4,28 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
               pluginManufacturer="Apedustrial Software">
   <MAINGROUP id="DW7AHf" name="MBR-Delay">
+    <GROUP id="{9B75919B-7456-68C6-0F2F-05575AA47068}" name="GUI">
+      <GROUP id="{C8861C83-865C-70D4-CC2F-28CAD28C732F}" name="Images">
+        <FILE id="zeg0Yz" name="backgroundWithModules.png" compile="0" resource="1"
+              file="../../../../Downloads/backgroundWithModules.png"/>
+        <FILE id="CEgtKR" name="mbrBackground.png" compile="0" resource="1"
+              file="../../../../Downloads/mbrBackground.png"/>
+      </GROUP>
+      <FILE id="Iv76wm" name="DelayLAF.h" compile="0" resource="0" file="Source/DelayLAF.h"/>
+      <FILE id="yeHst6" name="FeedbackLAF.h" compile="0" resource="0" file="Source/FeedbackLAF.h"/>
+    </GROUP>
+    <GROUP id="{9E3CCB3D-F5C5-1809-5388-3596A9FF81B7}" name="FX">
+      <FILE id="tZOW2G" name="ButterworthHighpass.cpp" compile="1" resource="0"
+            file="Source/ButterworthHighpass.cpp"/>
+      <FILE id="B7PuLI" name="ButterworthHighpass.h" compile="0" resource="0"
+            file="Source/ButterworthHighpass.h"/>
+      <FILE id="dLJBIU" name="ButterworthLowpass.cpp" compile="1" resource="0"
+            file="Source/ButterworthLowpass.cpp"/>
+      <FILE id="xinifk" name="ButterworthLowpass.h" compile="0" resource="0"
+            file="Source/ButterworthLowpass.h"/>
+      <FILE id="uLgqo2" name="Delay.cpp" compile="1" resource="0" file="Source/Delay.cpp"/>
+      <FILE id="Wq6etK" name="Delay.h" compile="0" resource="0" file="Source/Delay.h"/>
+    </GROUP>
     <GROUP id="{3A490CF6-BA0C-3274-ED27-66583290F6DC}" name="Source">
       <FILE id="w7Ztu2" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
@@ -13,16 +35,6 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="mLU3W0" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
-    <FILE id="tZOW2G" name="ButterworthHighpass.cpp" compile="1" resource="0"
-          file="Source/ButterworthHighpass.cpp"/>
-    <FILE id="B7PuLI" name="ButterworthHighpass.h" compile="0" resource="0"
-          file="Source/ButterworthHighpass.h"/>
-    <FILE id="dLJBIU" name="ButterworthLowpass.cpp" compile="1" resource="0"
-          file="Source/ButterworthLowpass.cpp"/>
-    <FILE id="xinifk" name="ButterworthLowpass.h" compile="0" resource="0"
-          file="Source/ButterworthLowpass.h"/>
-    <FILE id="uLgqo2" name="Delay.cpp" compile="1" resource="0" file="Source/Delay.cpp"/>
-    <FILE id="Wq6etK" name="Delay.h" compile="0" resource="0" file="Source/Delay.h"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
