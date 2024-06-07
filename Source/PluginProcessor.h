@@ -63,6 +63,10 @@ public:
     // Public functions for Delay mods
     void adjustFeedback(double fb);
     void adjustTimeDelay(std::string name, int ms);
+    void adjustHighpass(int hz);
+    void adjustLowpass(int hz);
+    void updateDry(float d);
+    void updateWet(float d);
     
     // Processor State Tree
     juce::AudioProcessorValueTreeState treeState;
@@ -70,15 +74,22 @@ public:
 private:
     // Feedback vars
     int mFeedback;
-    
-    // Time Delay vars
-    int mLeftDelay;
-    int mRightDelay;
+//
+//    // Time Delay vars
+//    int mLeftDelay;
+//    int mRightDelay;
+//
+//    // Filter vars
+//    int mHighpass;
+//    int mLowpass;
     
     // Delay Variables
     Delay mDelayBuffer;
     float mDryGain = 1.0f;
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoothedDry;
+    
     float mWetGain = 1.0f;
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoothedWet;
     
     // Mono Switch Variables
     bool mMonoSwitch = false;

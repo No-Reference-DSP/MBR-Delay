@@ -13,12 +13,6 @@
 MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcessor& p)
     : AudioProcessorEditor (&p), audioProcessor (p)
 {
-    // Tree State attatchments
-    feedbackValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mFeedback", mFeedbackKnob);
-    leftDelayValue =        std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mLeftDelay", mLeftDelayKnob);
-    rightDelayValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mRightDelay", mRightDelayKnob);
-    
-    
     // Feedback components
     mFeedbackKnob.setLookAndFeel(&fbLookAndFeel);
     mFeedbackKnob.setSliderStyle(juce::Slider::RotaryVerticalDrag);
@@ -29,6 +23,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mFeedbackKnob.setValue(15);
     mFeedbackKnob.addListener(this);
     addAndMakeVisible(mFeedbackKnob);
+    feedbackValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mFeedback", mFeedbackKnob);
     
     // Left Time Delay Components
     mLeftDelayKnob.setLookAndFeel(&tdLookAndFeel);
@@ -40,6 +35,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mLeftDelayKnob.setValue(200);
     mLeftDelayKnob.addListener(this);
     addAndMakeVisible(mLeftDelayKnob);
+    leftDelayValue =        std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mLeftDelay", mLeftDelayKnob);
     
     // Right Time Delay Components
     mRightDelayKnob.setLookAndFeel(&tdLookAndFeel);
@@ -51,7 +47,55 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mRightDelayKnob.setValue(200);
     mRightDelayKnob.addListener(this);
     addAndMakeVisible(mRightDelayKnob);
+    rightDelayValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mRightDelay", mRightDelayKnob);
     
+    // Highpass Filter
+    mHighpassFilter.setLookAndFeel(&ftrLookAndFeel);
+    mHighpassFilter.setSliderStyle(juce::Slider::RotaryVerticalDrag);
+    mHighpassFilter.setTextBoxStyle(juce::Slider::TextBoxLeft, false, 69, 25);
+    mHighpassFilter.setTextValueSuffix("Hz");
+    mHighpassFilter.setRotaryParameters(3.92699, 8.63938, true);
+    mHighpassFilter.setRange(20, 2000, 1);
+    mHighpassFilter.setValue(20);
+    mHighpassFilter.addListener(this);
+    addAndMakeVisible(mHighpassFilter);
+    highpassValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mHighpass", mHighpassFilter);
+    
+    // Lowpass Filter
+    mLowpassFilter.setLookAndFeel(&ftrLookAndFeel);
+    mLowpassFilter.setSliderStyle(juce::Slider::RotaryVerticalDrag);
+    mLowpassFilter.setTextBoxStyle(juce::Slider::TextBoxLeft, false, 69, 25);
+    mLowpassFilter.setTextValueSuffix("Hz");
+    mLowpassFilter.setRotaryParameters(3.92699, 8.63938, true);
+    mLowpassFilter.setRange(2000, 20000, 1);
+    mLowpassFilter.setValue(20000);
+    mLowpassFilter.addListener(this);
+    addAndMakeVisible(mLowpassFilter);
+    lowpassValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mLowpass", mLowpassFilter);
+    
+    // Dry
+    mDryKnob.setLookAndFeel(&mixLookAndFeel);
+    mDryKnob.setSliderStyle(juce::Slider::RotaryVerticalDrag);
+    mDryKnob.setTextBoxStyle(juce::Slider::TextBoxAbove, false, 48, 21);
+    mDryKnob.setTextValueSuffix("dB");
+    mDryKnob.setRotaryParameters(3.92699, 8.63938, true);
+    mDryKnob.setRange(-48.0f, 0.0f, 0.1);
+    mDryKnob.setValue(-1);
+    mDryKnob.addListener(this);
+    addAndMakeVisible(mDryKnob);
+    dryValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mDry", mDryKnob);
+    
+    // Wet
+    mWetKnob.setLookAndFeel(&mixLookAndFeel);
+    mWetKnob.setSliderStyle(juce::Slider::RotaryVerticalDrag);
+    mWetKnob.setTextBoxStyle(juce::Slider::TextBoxAbove, false, 48, 21);
+    mWetKnob.setTextValueSuffix("db");
+    mWetKnob.setRotaryParameters(3.92699, 8.63938, true);
+    mWetKnob.setRange(-48.f, 0.0f, 0.1);
+    mWetKnob.setValue(-1);
+    mWetKnob.addListener(this);
+    addAndMakeVisible(mWetKnob);
+    wetValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mWet", mWetKnob);
     
     setSize (900, 400);
 }
@@ -84,4 +128,8 @@ void MBRDelayAudioProcessorEditor::resized()
     mFeedbackKnob.setBounds(146, 64, 102, 110);
     mLeftDelayKnob.setBounds(327, 64, 122, 84);
     mRightDelayKnob.setBounds(327, 207, 122, 84);
+    mHighpassFilter.setBounds(499, 218, 123, 108);
+    mLowpassFilter.setBounds(499, 88, 123, 108);
+    mDryKnob.setBounds(769, 73, 73, 112);
+    mWetKnob.setBounds(769, 210, 73, 112);
 }

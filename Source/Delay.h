@@ -74,6 +74,18 @@ public:
         rightDelayTime = mSmoothedRightDelayTime.getNextValue();
     }
     
+    inline void updateHighpassCutoff(int hz)
+    {
+        mLeftHighpass.setFrequencyCutoff(hz);
+        mRightHighpass.setFrequencyCutoff(hz);
+    }
+    
+    inline void updateLowpassCutoff(int hz)
+    {
+        mLeftLowpass.setFrequencyCutoff(hz);
+        mRightLowpass.setFrequencyCutoff(hz);
+    }
+    
     void reset()
     {
         writeIndex = 0;

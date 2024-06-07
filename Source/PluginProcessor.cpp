@@ -24,7 +24,11 @@ treeState(*this, nullptr, "PARAMETERS",
           {
     std::make_unique<juce::AudioParameterInt>("mFeedback", "Feedback", 0, 150, 15),
     std::make_unique<juce::AudioParameterInt>("mLeftDelay", "LeftDelay", 0, 4000, 200),
-    std::make_unique<juce::AudioParameterInt>("mRightDelay", "RightDelay", 0, 4000, 200)
+    std::make_unique<juce::AudioParameterInt>("mRightDelay", "RightDelay", 0, 4000, 200),
+    std::make_unique<juce::AudioParameterInt>("mHighpass", "Highpass", 20, 2000, 20),
+    std::make_unique<juce::AudioParameterInt>("mLowpass", "Highpass", 2000, 20000, 20000),
+    std::make_unique<juce::AudioParameterFloat>("mDry", "Dry", -48.0f, 0.0f, -1.0f),
+    std::make_unique<juce::AudioParameterFloat>("mWet", "Wet", -48.0f, 0.0f, -1.0f)
 }),
         mFeedback(15)
 #endif
@@ -105,7 +109,10 @@ void MBRDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
     mDelayBuffer.setFeedback(mFeedback);
     mDelayBuffer.setTimeDelay("left", 200);
     mDelayBuffer.setTimeDelay("right", 200);
-
+    mDelayBuffer.updateHighpassCutoff(20);
+    mDelayBuffer.updateLowpassCutoff(20000);
+    smoothedDry.reset(sampleRate, 0.01);
+    smoothedWet.reset(sampleRate, 0.01);
 }
 
 void MBRDelayAudioProcessor::releaseResources()
@@ -159,12 +166,16 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         
         if(mMonoSwitch) convertStereoToMono(delayedLeftSample, delayedRightSample);
         
+        //set smoothed values
+        mDryGain = smoothedDry.getNextValue();
+        mWetGain = smoothedWet.getNextValue();
+        
         // Add it back to the channels + the dry sample
         auto* channelData = buffer.getWritePointer(leftChannel);
-        channelData[sample] = (leftSample * mDryGain) + (delayedLeftSample * mWetGain);
+        channelData[sample] = (leftSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedLeftSample * juce::Decibels::decibelsToGain(mWetGain));
         
         channelData = buffer.getWritePointer(rightChannel);
-        channelData[sample] = (rightSample * mDryGain) +(delayedRightSample * mWetGain);
+        channelData[sample] = (rightSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedRightSample * juce::Decibels::decibelsToGain(mWetGain));
     }
 }
 
@@ -185,12 +196,26 @@ void MBRDelayAudioProcessor::getStateInformation (juce::MemoryBlock& destData)
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+    // (From the JUCE Tut)
+    auto state = treeState.copyState();
+    std::unique_ptr<juce::XmlElement> xml (state.createXml());
+    copyXmlToBinary(*xml, destData);
 }
 
 void MBRDelayAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+    // From the JUCE Tut
+    std::unique_ptr<juce::XmlElement> xmlState (getXmlFromBinary(data, sizeInBytes));
+    
+    if(xmlState.get() != nullptr)
+    {
+        if(xmlState->hasTagName (treeState.state.getType()))
+        {
+            treeState.replaceState (juce::ValueTree::fromXml(*xmlState));
+        }
+    }
 }
 
 //==============================================================================
@@ -227,4 +252,24 @@ void MBRDelayAudioProcessor::adjustTimeDelay(std::string name, int ms)
 {
     
     mDelayBuffer.setTimeDelay(name, ms);
+}
+
+void MBRDelayAudioProcessor::adjustHighpass(int hz)
+{
+    mDelayBuffer.updateHighpassCutoff(hz);
+}
+
+void MBRDelayAudioProcessor::adjustLowpass(int hz)
+{
+    mDelayBuffer.updateLowpassCutoff(hz);
+}
+
+void MBRDelayAudioProcessor::updateDry(float d)
+{
+    smoothedDry.setTargetValue(d);
+}
+
+void MBRDelayAudioProcessor::updateWet(float d)
+{
+    smoothedWet.setTargetValue(d);
 }

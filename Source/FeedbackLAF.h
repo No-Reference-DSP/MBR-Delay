@@ -56,4 +56,12 @@ public:
 
         return layout;
     }
+    
+    juce::Label* createSliderTextBox(juce::Slider& slider) override
+    {
+        juce::Label* l = juce::LookAndFeel_V2::createSliderTextBox(slider);
+        l->setColour(juce::Label::textColourId, juce::Colours::black);
+
+        return l;
+    }
 };

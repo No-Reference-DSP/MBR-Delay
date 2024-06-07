@@ -23,6 +23,7 @@ ButterworthHighpass::~ButterworthHighpass()
 void ButterworthHighpass::update()
 {
     // check Omega for udpates
+    updateFrequencyCutoff();
     setOmega();
 
     // b is fed forward

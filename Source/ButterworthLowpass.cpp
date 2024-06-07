@@ -24,6 +24,7 @@ void ButterworthLowpass::update()
 {
     // check for updates on omega
     setOmega();
+    updateFrequencyCutoff();
     
     // fed forward b
     b0 = (pow(omega,2)/(1 + (omega*SQRT2) + pow(omega,2)));
