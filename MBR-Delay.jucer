@@ -6,15 +6,23 @@
   <MAINGROUP id="DW7AHf" name="MBR-Delay">
     <GROUP id="{9B75919B-7456-68C6-0F2F-05575AA47068}" name="GUI">
       <GROUP id="{C8861C83-865C-70D4-CC2F-28CAD28C732F}" name="Images">
-        <FILE id="ONmWqE" name="backgroundWithModules.png" compile="0" resource="1"
-              file="../../../../.Trash/backgroundWithModules.png"/>
+        <FILE id="L7pixW" name="BypassBackground.png" compile="0" resource="1"
+              file="../../../../Downloads/BypassBackground.png"/>
+        <FILE id="dchj6b" name="BypassSwitchOn.png" compile="0" resource="1"
+              file="../../../../Downloads/BypassSwitchOn.png"/>
+        <FILE id="etlcuw" name="BypassSwitchOff.png" compile="0" resource="1"
+              file="../../../../Downloads/BypassSwitchOff.png"/>
+        <FILE id="yYPzSP" name="backgroundWithModules.png" compile="0" resource="1"
+              file="../../../../Downloads/backgroundWithModules.png"/>
         <FILE id="CEgtKR" name="mbrBackground.png" compile="0" resource="1"
               file="../../../../Downloads/mbrBackground.png"/>
       </GROUP>
+      <FILE id="PAlmCz" name="BypassLAF.h" compile="0" resource="0" file="Source/BypassLAF.h"/>
       <FILE id="Iv76wm" name="DelayLAF.h" compile="0" resource="0" file="Source/DelayLAF.h"/>
       <FILE id="yeHst6" name="FeedbackLAF.h" compile="0" resource="0" file="Source/FeedbackLAF.h"/>
       <FILE id="i3e1gh" name="FilterLAF.h" compile="0" resource="0" file="Source/FilterLAF.h"/>
       <FILE id="NO5q1z" name="MixLAF.h" compile="0" resource="0" file="Source/MixLAF.h"/>
+      <FILE id="wmdmxe" name="MonoLAF.h" compile="0" resource="0" file="Source/MonoLAF.h"/>
     </GROUP>
     <GROUP id="{9E3CCB3D-F5C5-1809-5388-3596A9FF81B7}" name="FX">
       <FILE id="tZOW2G" name="ButterworthHighpass.cpp" compile="1" resource="0"

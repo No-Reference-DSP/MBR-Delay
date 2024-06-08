@@ -97,6 +97,27 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     addAndMakeVisible(mWetKnob);
     wetValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mWet", mWetKnob);
     
+    // Bypass
+    mBypass.setLookAndFeel(&bpLookAndFeel);
+    mBypass.setSliderStyle(juce::Slider::LinearHorizontal);
+    mBypass.setTextBoxStyle(juce::Slider::NoTextBox, true, 0,0);
+    mBypass.setRange(0, 1, 1);
+    mBypass.setValue(0);
+    mBypass.addListener(this);
+    addAndMakeVisible(mBypass);
+    bypassValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mBypass", mBypass);
+    
+    // Mono
+    mMonoSwitch.setLookAndFeel(&monoLookAndFeel);
+    mMonoSwitch.setSliderStyle(juce::Slider::LinearHorizontal);
+    mMonoSwitch.setTextBoxStyle(juce::Slider::NoTextBox, true, 0,0);
+    mMonoSwitch.setRange(0, 1, 1);
+    mMonoSwitch.setValue(1);
+    mMonoSwitch.addListener(this);
+    addAndMakeVisible(mMonoSwitch);
+    monoValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mMono", mMonoSwitch);
+    
+    
     setSize (900, 400);
 }
 
@@ -116,9 +137,13 @@ void MBRDelayAudioProcessorEditor::paint (juce::Graphics& g)
 //    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
     
     // Draw background
+    
     auto backgroundImage = juce::ImageCache::getFromMemory(BinaryData::backgroundWithModules_png, BinaryData::backgroundWithModules_pngSize);
     g.drawImage(backgroundImage, getLocalBounds().toFloat());
-
+    
+    auto bypassBackground = juce::ImageCache::getFromMemory(BinaryData::BypassBackground_png, BinaryData::BypassBackground_pngSize);
+    g.drawImage(bypassBackground, 170, 298, 73, 33, 0, 0, 73, 33);
+    
 }
 
 void MBRDelayAudioProcessorEditor::resized()
@@ -132,4 +157,6 @@ void MBRDelayAudioProcessorEditor::resized()
     mLowpassFilter.setBounds(499, 88, 123, 108);
     mDryKnob.setBounds(769, 73, 73, 112);
     mWetKnob.setBounds(769, 210, 73, 112);
+    mBypass.setBounds(170, 298, 73, 33);
+    mMonoSwitch.setBounds(343, 323, 50, 12);
 }

@@ -8,14 +8,23 @@
 
 namespace BinaryData
 {
+    extern const char*   BypassBackground_png;
+    const int            BypassBackground_pngSize = 336;
+
+    extern const char*   BypassSwitchOn_png;
+    const int            BypassSwitchOn_pngSize = 808;
+
+    extern const char*   BypassSwitchOff_png;
+    const int            BypassSwitchOff_pngSize = 789;
+
     extern const char*   backgroundWithModules_png;
-    const int            backgroundWithModules_pngSize = 19626;
+    const int            backgroundWithModules_pngSize = 19513;
 
     extern const char*   mbrBackground_png;
     const int            mbrBackground_pngSize = 6361;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 2;
+    const int namedResourceListSize = 5;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

@@ -16,6 +16,8 @@
 #include "DelayLAF.h"
 #include "FilterLAF.h"
 #include "MixLAF.h"
+#include "BypassLAF.h"
+#include "MonoLAF.h"
 
 //==============================================================================
 /**
@@ -61,6 +63,14 @@ public:
         {
             audioProcessor.updateWet(mWetKnob.getValue());
         }
+        else if(slider == &mBypass)
+        {
+            audioProcessor.bypassToggle(mBypass.getValue());
+        }
+        else if(slider == &mMonoSwitch)
+        {
+            audioProcessor.toggleMono(mMonoSwitch.getValue());
+        }
     }
 
 private:
@@ -88,6 +98,14 @@ private:
     juce::Slider mDryKnob;
     juce::Slider mWetKnob;
     
+    // Bypass Slider
+    BypassLAF bpLookAndFeel;
+    juce::Slider mBypass;
+    
+    // Mono Slider
+    MonoLAF monoLookAndFeel;
+    juce::Slider mMonoSwitch;
+    
 public:
     // Tree State Data
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> feedbackValue;
@@ -97,6 +115,8 @@ public:
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> lowpassValue;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> dryValue;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> wetValue;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> bypassValue;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> monoValue;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessorEditor)
 };

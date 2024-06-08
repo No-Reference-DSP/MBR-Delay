@@ -57,7 +57,7 @@ public:
     
     //===========================================
     // creating functions to convert audio into mono
-    void toggleMono();
+    void toggleMono(int m);
     void convertStereoToMono(float& leftChannelAudio, float& rightChannelAudio);
     
     // Public functions for Delay mods
@@ -67,6 +67,7 @@ public:
     void adjustLowpass(int hz);
     void updateDry(float d);
     void updateWet(float d);
+    void bypassToggle(int i);
     
     // Processor State Tree
     juce::AudioProcessorValueTreeState treeState;
@@ -92,7 +93,10 @@ private:
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> smoothedWet;
     
     // Mono Switch Variables
-    bool mMonoSwitch = false;
+    bool mMono;
+    
+    // Bypass
+    bool Bypass;
     
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessor)

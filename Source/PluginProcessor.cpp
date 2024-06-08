@@ -28,9 +28,11 @@ treeState(*this, nullptr, "PARAMETERS",
     std::make_unique<juce::AudioParameterInt>("mHighpass", "Highpass", 20, 2000, 20),
     std::make_unique<juce::AudioParameterInt>("mLowpass", "Highpass", 2000, 20000, 20000),
     std::make_unique<juce::AudioParameterFloat>("mDry", "Dry", -48.0f, 0.0f, -1.0f),
-    std::make_unique<juce::AudioParameterFloat>("mWet", "Wet", -48.0f, 0.0f, -1.0f)
+    std::make_unique<juce::AudioParameterFloat>("mWet", "Wet", -48.0f, 0.0f, -1.0f),
+    std::make_unique<juce::AudioParameterInt>("mBypass", "Bypass", 0, 1, 0),
+    std::make_unique<juce::AudioParameterInt>("mMono", "Mono", 0, 1, 1)
 }),
-        mFeedback(15)
+        mFeedback(15), Bypass(false), mMono(false)
 #endif
 {
 }
@@ -164,18 +166,27 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         float rightSample = buffer.getSample(rightChannel, sample);
         float delayedRightSample = mDelayBuffer.doRightDelay(rightSample);
         
-        if(mMonoSwitch) convertStereoToMono(delayedLeftSample, delayedRightSample);
+        if(mMono) convertStereoToMono(delayedLeftSample, delayedRightSample);
         
         //set smoothed values
         mDryGain = smoothedDry.getNextValue();
         mWetGain = smoothedWet.getNextValue();
         
         // Add it back to the channels + the dry sample
+        
         auto* channelData = buffer.getWritePointer(leftChannel);
-        channelData[sample] = (leftSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedLeftSample * juce::Decibels::decibelsToGain(mWetGain));
+        if(Bypass)
+        {
+            channelData[sample] = leftSample * juce::Decibels::decibelsToGain(mDryGain);
+        } else
+            channelData[sample] = (leftSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedLeftSample * juce::Decibels::decibelsToGain(mWetGain));
         
         channelData = buffer.getWritePointer(rightChannel);
-        channelData[sample] = (rightSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedRightSample * juce::Decibels::decibelsToGain(mWetGain));
+        if(Bypass)
+        {
+            channelData[sample] = rightSample * juce::Decibels::decibelsToGain(mDryGain);
+        } else
+            channelData[sample] = (rightSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedRightSample * juce::Decibels::decibelsToGain(mWetGain));
     }
 }
 
@@ -227,10 +238,10 @@ juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 
 //==============================================================================
 // Functions to convert audio into mono
-void MBRDelayAudioProcessor::toggleMono()
+void MBRDelayAudioProcessor::toggleMono(int m)
 {
-    if(mMonoSwitch == true) mMonoSwitch = false;
-    else if(mMonoSwitch == false) mMonoSwitch = true;
+    if(m == 1) mMono = false;
+    else if(m == 0) mMono = true;
 }
 
 void MBRDelayAudioProcessor::convertStereoToMono(float& leftChannelAudio, float& rightChannelAudio)
@@ -272,4 +283,10 @@ void MBRDelayAudioProcessor::updateDry(float d)
 void MBRDelayAudioProcessor::updateWet(float d)
 {
     smoothedWet.setTargetValue(d);
+}
+
+void MBRDelayAudioProcessor::bypassToggle(int b)
+{
+    if(b == 0) Bypass = false;
+    else if(b == 1) Bypass = true;
 }
