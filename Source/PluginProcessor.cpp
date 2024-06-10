@@ -32,7 +32,7 @@ treeState(*this, nullptr, "PARAMETERS",
     std::make_unique<juce::AudioParameterInt>("mBypass", "Bypass", 0, 1, 0),
     std::make_unique<juce::AudioParameterInt>("mMono", "Mono", 0, 1, 1)
 }),
-        mFeedback(15), Bypass(false), mMono(false)
+mFeedback(15), mMono(false), Bypass(false)
 #endif
 {
 }
