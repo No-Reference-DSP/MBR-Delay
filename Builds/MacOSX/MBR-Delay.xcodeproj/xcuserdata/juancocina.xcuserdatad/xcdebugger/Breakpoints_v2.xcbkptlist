@@ -24,7 +24,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A945E07C-EC0C-4AB5-AAA3-CD5E1DF0B0AE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Source/ButterworthHighpass.cpp"
@@ -136,16 +136,48 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F1C18922-3365-475A-AAE9-2CA7C2F8AB0D"
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Source/PluginProcessor.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "MBRDelayAudioProcessor::processBlock(buffer, midiMessages)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F1C18922-3365-475A-AAE9-2CA7C2F8AB0D - 13dc0d1a7e1b6d19"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBRDelayAudioProcessor::processBlock(juce::AudioBuffer&lt;float&gt;&amp;, juce::MidiBuffer&amp;)"
+                  moduleName = "MBR-Delay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juancocina/Desktop/SWE%20Projects/Apedustrial%20Software/MBR-Delay/Source/PluginProcessor.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "186"
+                  endingLineNumber = "186"
+                  offsetFromSymbolStart = "593">
+               </Location>
+               <Location
+                  uuid = "F1C18922-3365-475A-AAE9-2CA7C2F8AB0D - 13dc0d1a7e1b6cdf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBRDelayAudioProcessor::processBlock(juce::AudioBuffer&lt;float&gt;&amp;, juce::MidiBuffer&amp;)"
+                  moduleName = "MBR-Delay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juancocina/Desktop/SWE%20Projects/Apedustrial%20Software/MBR-Delay/Source/PluginProcessor.cpp"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "184"
+                  endingLineNumber = "184"
+                  offsetFromSymbolStart = "446">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -158,10 +190,10 @@
             filePath = "../../Source/PluginProcessor.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "MBRDelayAudioProcessor::processBlock(buffer, midiMessages)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -411,8 +443,8 @@
             filePath = "../../Source/PluginEditor.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor(p)"
             landmarkType = "7">
             <Locations>
@@ -494,6 +526,38 @@
             endingLineNumber = "40"
             landmarkName = "sliderValueChanged(slider)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1CBD3B6B-5473-411C-9584-D671259381BC - c2f1ffbdda95a8a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBRDelayAudioProcessorEditor::sliderValueChanged(juce::Slider*)"
+                  moduleName = "MBR-Delay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juancocina/Desktop/SWE%20Projects/Apedustrial%20Software/MBR-Delay/Source/PluginEditor.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "51">
+               </Location>
+               <Location
+                  uuid = "1CBD3B6B-5473-411C-9584-D671259381BC - c2f1ffbdda95a8a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MBRDelayAudioProcessorEditor::sliderValueChanged(juce::Slider*)"
+                  moduleName = "MBR-Delay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/juancocina/Desktop/SWE%20Projects/Apedustrial%20Software/MBR-Delay/Source/PluginEditor.h"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "57">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -506,13 +570,13 @@
             filePath = "../../Source/PluginProcessor.cpp"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "MBRDelayAudioProcessor::adjustFeedback(fb)"
+            landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "7349FF88-BFE7-44A9-B658-A0E289C01AAD - d176484b2f88cb4f"
+                  uuid = "7349FF88-BFE7-44A9-B658-A0E289C01AAD - d176484b2f88c667"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -522,12 +586,12 @@
                   urlString = "file:///Users/juancocina/Desktop/SWE%20Projects/Apedustrial%20Software/MBR-Delay/Source/PluginProcessor.cpp"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "238"
-                  endingLineNumber = "238"
-                  offsetFromSymbolStart = "21">
+                  startingLineNumber = "262"
+                  endingLineNumber = "262"
+                  offsetFromSymbolStart = "38">
                </Location>
                <Location
-                  uuid = "7349FF88-BFE7-44A9-B658-A0E289C01AAD - d176484b2f88c88d"
+                  uuid = "7349FF88-BFE7-44A9-B658-A0E289C01AAD - d176484b2f88c646"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -537,8 +601,8 @@
                   urlString = "file:///Users/juancocina/Desktop/SWE%20Projects/Apedustrial%20Software/MBR-Delay/Source/PluginProcessor.cpp"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "240"
-                  endingLineNumber = "240"
+                  startingLineNumber = "261"
+                  endingLineNumber = "261"
                   offsetFromSymbolStart = "21">
                </Location>
             </Locations>
@@ -628,7 +692,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "6669FECB-7649-4A8D-96D7-0B9EE2A814B4"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Source/ButterworthHighpass.h"
@@ -644,7 +708,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "1D951ECB-31CC-483B-985D-40A3C3A7C5A1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../Source/ButterworthHighpass.h"
@@ -652,6 +716,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
             endingLineNumber = "60"
+            landmarkName = "setFrequencyCutoff(hz)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6DE398B7-F82D-47F0-9D19-6EDA2C755EFC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../Source/ButterworthHighpass.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "setFrequencyCutoff(hz)"
             landmarkType = "7">
          </BreakpointContent>

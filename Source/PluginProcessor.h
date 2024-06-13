@@ -98,6 +98,9 @@ private:
     // Bypass
     bool Bypass;
     
+    // link
+    bool mLink;
+    
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessor)
 };

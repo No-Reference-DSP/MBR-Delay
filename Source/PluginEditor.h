@@ -33,7 +33,7 @@ public:
     void resized() override;
     
     // overriding the Slider Listener
-    inline void sliderValueChanged (juce::Slider *slider) override
+    void sliderValueChanged (juce::Slider *slider) override
     {
         if(slider == &mFeedbackKnob)
         {
@@ -42,10 +42,18 @@ public:
         else if(slider == &mLeftDelayKnob)
         {
             audioProcessor.adjustTimeDelay("left", mLeftDelayKnob.getValue());
+            if(mLinkButton.getToggleState())
+            {
+                mRightDelayKnob.setValue(mLeftDelayKnob.getValue());
+            }
         }
         else if(slider == &mRightDelayKnob)
         {
             audioProcessor.adjustTimeDelay("right", mRightDelayKnob.getValue());
+            if(mLinkButton.getToggleState())
+            {
+                mLeftDelayKnob.setValue(mRightDelayKnob.getValue());
+            }
         }
         else if(slider == &mHighpassFilter)
         {
@@ -106,6 +114,9 @@ private:
     MonoLAF monoLookAndFeel;
     juce::Slider mMonoSwitch;
     
+    // Link button
+    juce::ImageButton mLinkButton;
+    
 public:
     // Tree State Data
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> feedbackValue;
@@ -117,6 +128,7 @@ public:
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> wetValue;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> bypassValue;
     std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> monoValue;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> linkValue;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MBRDelayAudioProcessorEditor)
 };

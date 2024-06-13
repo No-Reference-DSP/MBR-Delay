@@ -36,7 +36,7 @@ public:
             writeIndex = 0;
     }
     
-    inline void setSampleRate(double sampleRate)
+    void setSampleRate(double sampleRate)
     {
         mSampleRate = sampleRate;
         
@@ -49,8 +49,8 @@ public:
         
         // for the smoothing
         mSmoothedFeedback.reset(sampleRate, 0.05);
-        mSmoothedLeftDelayTime.reset(sampleRate, 0.03);
-        mSmoothedRightDelayTime.reset(sampleRate, 0.03);
+        mSmoothedLeftDelayTime.reset(sampleRate, 0.07);
+        mSmoothedRightDelayTime.reset(sampleRate, 0.07);
     }
     
     inline void setFeedback(double fb) {
@@ -131,10 +131,10 @@ private:
     
     // delayTime in miliseconds(ms), hardcoded for now
     //int delayTime = 100;
-    int leftDelayTime;
-    juce::SmoothedValue<int, juce::ValueSmoothingTypes::Linear> mSmoothedLeftDelayTime;
-    int rightDelayTime;
-    juce::SmoothedValue<int, juce::ValueSmoothingTypes::Linear> mSmoothedRightDelayTime;
+    float leftDelayTime;
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> mSmoothedLeftDelayTime;
+    float rightDelayTime;
+    juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> mSmoothedRightDelayTime;
     
     // feedback + smoothing
     float mFeedback;

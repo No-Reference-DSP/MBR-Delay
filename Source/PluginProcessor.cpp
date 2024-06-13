@@ -23,18 +23,20 @@ MBRDelayAudioProcessor::MBRDelayAudioProcessor()
 treeState(*this, nullptr, "PARAMETERS",
           {
     std::make_unique<juce::AudioParameterInt>("mFeedback", "Feedback", 0, 150, 15),
-    std::make_unique<juce::AudioParameterInt>("mLeftDelay", "LeftDelay", 0, 4000, 200),
-    std::make_unique<juce::AudioParameterInt>("mRightDelay", "RightDelay", 0, 4000, 200),
+    std::make_unique<juce::AudioParameterInt>("mLeftDelay", "LeftDelay", 1, 2000, 200),
+    std::make_unique<juce::AudioParameterInt>("mRightDelay", "RightDelay", 1, 2000, 200),
     std::make_unique<juce::AudioParameterInt>("mHighpass", "Highpass", 20, 2000, 20),
     std::make_unique<juce::AudioParameterInt>("mLowpass", "Highpass", 2000, 20000, 20000),
-    std::make_unique<juce::AudioParameterFloat>("mDry", "Dry", -48.0f, 0.0f, -1.0f),
-    std::make_unique<juce::AudioParameterFloat>("mWet", "Wet", -48.0f, 0.0f, -1.0f),
+    std::make_unique<juce::AudioParameterFloat>("mDry", "Dry", -64.0f, 0.0f, -1.0f),
+    std::make_unique<juce::AudioParameterFloat>("mWet", "Wet", -64.0f, 0.0f, -1.0f),
     std::make_unique<juce::AudioParameterInt>("mBypass", "Bypass", 0, 1, 0),
-    std::make_unique<juce::AudioParameterInt>("mMono", "Mono", 0, 1, 1)
+    std::make_unique<juce::AudioParameterInt>("mMono", "Mono", 0, 1, 1),
+    std::make_unique<juce::AudioParameterBool>("mLink", "Link", false)
 }),
 mFeedback(15), mMono(false), Bypass(false)
 #endif
 {
+    mLink = treeState.getRawParameterValue("mLink");
 }
 
 MBRDelayAudioProcessor::~MBRDelayAudioProcessor()
@@ -277,12 +279,14 @@ void MBRDelayAudioProcessor::adjustLowpass(int hz)
 
 void MBRDelayAudioProcessor::updateDry(float d)
 {
-    smoothedDry.setTargetValue(d);
+    if(d < -63.9) smoothedDry.setTargetValue(-100);
+    else smoothedDry.setTargetValue(d);
 }
 
 void MBRDelayAudioProcessor::updateWet(float d)
 {
-    smoothedWet.setTargetValue(d);
+    if(d < -63.9) smoothedWet.setTargetValue(-100);
+    else smoothedWet.setTargetValue(d);
 }
 
 void MBRDelayAudioProcessor::bypassToggle(int b)

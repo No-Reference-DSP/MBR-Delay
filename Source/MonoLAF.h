@@ -54,7 +54,7 @@ public:
         g.setColour (juce::Colour::fromString("FFD9D9D9"));
         g.strokePath (valueTrack, { trackWidth, juce::PathStrokeType::curved, juce::PathStrokeType::rounded });
 
-        g.setColour (juce::Colour::fromString("FF3E7D66"));
+        g.setColour (juce::Colour::fromString("FFF5751D"));
         g.fillEllipse (juce::Rectangle<float> (static_cast<float> (thumbWidth*1.7), static_cast<float> (thumbWidth*1.7)).withCentre (maxPoint));
     }
     

@@ -31,7 +31,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mLeftDelayKnob.setTextBoxStyle(juce::Slider::TextBoxRight, false, 48, 22);
     mLeftDelayKnob.setTextValueSuffix("ms");
     mLeftDelayKnob.setRotaryParameters(3.92699, 8.63938, true);
-    mLeftDelayKnob.setRange(0, 4000, 1); // ms, 4 second delay time?
+    mLeftDelayKnob.setRange(1, 2000, 1); // ms, 4 second delay time?
     mLeftDelayKnob.setValue(200);
     mLeftDelayKnob.addListener(this);
     addAndMakeVisible(mLeftDelayKnob);
@@ -43,7 +43,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mRightDelayKnob.setTextBoxStyle(juce::Slider::TextBoxRight, false, 48, 22);
     mRightDelayKnob.setTextValueSuffix("ms");
     mRightDelayKnob.setRotaryParameters(3.92699, 8.63938, true);
-    mRightDelayKnob.setRange(0, 4000, 1); // same as above
+    mRightDelayKnob.setRange(1, 2000, 1); // same as above
     mRightDelayKnob.setValue(200);
     mRightDelayKnob.addListener(this);
     addAndMakeVisible(mRightDelayKnob);
@@ -79,7 +79,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mDryKnob.setTextBoxStyle(juce::Slider::TextBoxAbove, false, 48, 21);
     mDryKnob.setTextValueSuffix("dB");
     mDryKnob.setRotaryParameters(3.92699, 8.63938, true);
-    mDryKnob.setRange(-48.0f, 0.0f, 0.1);
+    mDryKnob.setRange(-64.0f, 0.0f, 0.1);
     mDryKnob.setValue(-1);
     mDryKnob.addListener(this);
     addAndMakeVisible(mDryKnob);
@@ -91,7 +91,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mWetKnob.setTextBoxStyle(juce::Slider::TextBoxAbove, false, 48, 21);
     mWetKnob.setTextValueSuffix("db");
     mWetKnob.setRotaryParameters(3.92699, 8.63938, true);
-    mWetKnob.setRange(-48.f, 0.0f, 0.1);
+    mWetKnob.setRange(-64.f, 0.0f, 0.1);
     mWetKnob.setValue(-1);
     mWetKnob.addListener(this);
     addAndMakeVisible(mWetKnob);
@@ -116,6 +116,19 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mMonoSwitch.addListener(this);
     addAndMakeVisible(mMonoSwitch);
     monoValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mMono", mMonoSwitch);
+    
+    // Link
+    auto onImage = juce::ImageCache::getFromMemory(BinaryData::LinkOn_png, BinaryData::LinkOn_pngSize);
+    auto offImage = juce::ImageCache::getFromMemory(BinaryData::LinkOff_png, BinaryData::LinkOff_pngSize);
+    mLinkButton.setImages(false, false, false,
+                          offImage, 1.0f, juce::Colours::transparentWhite,
+                          offImage, 1.0f, juce::Colours::transparentWhite,
+                          onImage, 1.0f, juce:: Colours::transparentWhite);
+    addAndMakeVisible(mLinkButton);
+    mLinkButton.setClickingTogglesState(true);
+    linkValue.reset( new juce::AudioProcessorValueTreeState::ButtonAttachment (audioProcessor.treeState, "mLink", mLinkButton));
+    
+    
     
     
     setSize (900, 400);
@@ -159,4 +172,5 @@ void MBRDelayAudioProcessorEditor::resized()
     mWetKnob.setBounds(769, 210, 73, 112);
     mBypass.setBounds(170, 298, 73, 33);
     mMonoSwitch.setBounds(343, 323, 50, 12);
+    mLinkButton.setBounds(295, 123, 14, 48);
 }
