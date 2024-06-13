@@ -8,23 +8,23 @@
 
 namespace BinaryData
 {
-    extern const char*   LinkOn_png;
-    const int            LinkOn_pngSize = 755;
-
-    extern const char*   LinkOff_png;
-    const int            LinkOff_pngSize = 846;
+    extern const char*   backgroundWithModules_png;
+    const int            backgroundWithModules_pngSize = 19513;
 
     extern const char*   BypassBackground_png;
     const int            BypassBackground_pngSize = 336;
 
-    extern const char*   BypassSwitchOn_png;
-    const int            BypassSwitchOn_pngSize = 808;
-
     extern const char*   BypassSwitchOff_png;
     const int            BypassSwitchOff_pngSize = 789;
 
-    extern const char*   backgroundWithModules_png;
-    const int            backgroundWithModules_pngSize = 19513;
+    extern const char*   BypassSwitchOn_png;
+    const int            BypassSwitchOn_pngSize = 808;
+
+    extern const char*   LinkOff_png;
+    const int            LinkOff_pngSize = 846;
+
+    extern const char*   LinkOn_png;
+    const int            LinkOn_pngSize = 755;
 
     extern const char*   mbrBackground_png;
     const int            mbrBackground_pngSize = 6361;

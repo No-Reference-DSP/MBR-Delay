@@ -6,18 +6,18 @@
   <MAINGROUP id="DW7AHf" name="MBR-Delay">
     <GROUP id="{9B75919B-7456-68C6-0F2F-05575AA47068}" name="GUI">
       <GROUP id="{C8861C83-865C-70D4-CC2F-28CAD28C732F}" name="Images">
-        <FILE id="Npej6h" name="LinkOn.png" compile="0" resource="1" file="../../../../Downloads/LinkOn.png"/>
-        <FILE id="HjVhpv" name="LinkOff.png" compile="0" resource="1" file="../../../../Downloads/LinkOff.png"/>
-        <FILE id="L7pixW" name="BypassBackground.png" compile="0" resource="1"
-              file="../../../../Downloads/BypassBackground.png"/>
-        <FILE id="dchj6b" name="BypassSwitchOn.png" compile="0" resource="1"
-              file="../../../../Downloads/BypassSwitchOn.png"/>
-        <FILE id="etlcuw" name="BypassSwitchOff.png" compile="0" resource="1"
-              file="../../../../Downloads/BypassSwitchOff.png"/>
-        <FILE id="yYPzSP" name="backgroundWithModules.png" compile="0" resource="1"
-              file="../../../../Downloads/backgroundWithModules.png"/>
-        <FILE id="CEgtKR" name="mbrBackground.png" compile="0" resource="1"
-              file="../../../../Downloads/mbrBackground.png"/>
+        <FILE id="u1lhP0" name="backgroundWithModules.png" compile="0" resource="1"
+              file="Images/backgroundWithModules.png"/>
+        <FILE id="N5kq3i" name="BypassBackground.png" compile="0" resource="1"
+              file="Images/BypassBackground.png"/>
+        <FILE id="cdVOjf" name="BypassSwitchOff.png" compile="0" resource="1"
+              file="Images/BypassSwitchOff.png"/>
+        <FILE id="nFZNLv" name="BypassSwitchOn.png" compile="0" resource="1"
+              file="Images/BypassSwitchOn.png"/>
+        <FILE id="UV7gzP" name="LinkOff.png" compile="0" resource="1" file="Images/LinkOff.png"/>
+        <FILE id="dzeKf9" name="LinkOn.png" compile="0" resource="1" file="Images/LinkOn.png"/>
+        <FILE id="S2b4re" name="mbrBackground.png" compile="0" resource="1"
+              file="Images/mbrBackground.png"/>
       </GROUP>
       <FILE id="PAlmCz" name="BypassLAF.h" compile="0" resource="0" file="Source/BypassLAF.h"/>
       <FILE id="Iv76wm" name="DelayLAF.h" compile="0" resource="0" file="Source/DelayLAF.h"/>
