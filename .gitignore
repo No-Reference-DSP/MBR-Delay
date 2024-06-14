@@ -27,3 +27,5 @@ Builds/MacOSX/build/Debug/libMBR-Delay.a
 Builds/MacOSX/MBR-Delay.xcodeproj/xcuserdata/juancocina.xcuserdatad/xcschemes/xcschememanagement.plist
 Builds/MacOSX/MBR-Delay.xcodeproj/project.xcworkspace/xcuserdata/juancocina.xcuserdatad/UserInterfaceState.xcuserstate
 Builds/MacOSX/MBR-Delay.xcodeproj/project.xcworkspace/xcuserdata/juancocina.xcuserdatad/UserInterfaceState.xcuserstate
+Builds/VisualStudio2019/x64
+.vs

@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio Version 16
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MBR-Delay - Standalone Plugin", "MBR-Delay_StandalonePlugin.vcxproj", "{5283CEAD-F835-B3DF-9389-BA7D6437300B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFA516EE-3676-0F7B-1DEE-7566EBBA1817} = {FFA516EE-3676-0F7B-1DEE-7566EBBA1817}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MBR-Delay - VST3", "MBR-Delay_VST3.vcxproj", "{21FAF7A8-C325-D1CD-4BFD-808CEA8624AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FFA516EE-3676-0F7B-1DEE-7566EBBA1817} = {FFA516EE-3676-0F7B-1DEE-7566EBBA1817}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MBR-Delay - Shared Code", "MBR-Delay_SharedCode.vcxproj", "{FFA516EE-3676-0F7B-1DEE-7566EBBA1817}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21FAF7A8-C325-D1CD-4BFD-808CEA8624AB}.Debug|x64.ActiveCfg = Debug|x64
+		{21FAF7A8-C325-D1CD-4BFD-808CEA8624AB}.Debug|x64.Build.0 = Debug|x64
+		{21FAF7A8-C325-D1CD-4BFD-808CEA8624AB}.Release|x64.ActiveCfg = Release|x64
+		{21FAF7A8-C325-D1CD-4BFD-808CEA8624AB}.Release|x64.Build.0 = Release|x64
+		{5283CEAD-F835-B3DF-9389-BA7D6437300B}.Debug|x64.ActiveCfg = Debug|x64
+		{5283CEAD-F835-B3DF-9389-BA7D6437300B}.Debug|x64.Build.0 = Debug|x64
+		{5283CEAD-F835-B3DF-9389-BA7D6437300B}.Release|x64.ActiveCfg = Release|x64
+		{5283CEAD-F835-B3DF-9389-BA7D6437300B}.Release|x64.Build.0 = Release|x64
+		{FFA516EE-3676-0F7B-1DEE-7566EBBA1817}.Debug|x64.ActiveCfg = Debug|x64
+		{FFA516EE-3676-0F7B-1DEE-7566EBBA1817}.Debug|x64.Build.0 = Debug|x64
+		{FFA516EE-3676-0F7B-1DEE-7566EBBA1817}.Release|x64.ActiveCfg = Release|x64
+		{FFA516EE-3676-0F7B-1DEE-7566EBBA1817}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
