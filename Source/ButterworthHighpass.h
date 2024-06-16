@@ -25,6 +25,7 @@ class ButterworthHighpass {
 public:
     // Constructor
     ButterworthHighpass();
+
     // Destructor
     ~ButterworthHighpass();
     
@@ -69,8 +70,6 @@ public:
     {
         a0 = 1; a1 = 0; a2 = 0;
         b0 = 0; b1 = 0; b2 = 0;
-        
-        mFrequencyCutoff = 20.0f;
         
         in1 = 0; in2 = 0;
         out1 = 0; out2 = 0;

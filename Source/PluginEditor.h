@@ -39,7 +39,7 @@ public:
         {
             audioProcessor.adjustFeedback(mFeedbackKnob.getValue());
         }
-        else if(slider == &mLeftDelayKnob)
+        if(slider == &mLeftDelayKnob)
         {
             audioProcessor.adjustTimeDelay("left", mLeftDelayKnob.getValue());
             if(mLinkButton.getToggleState())
@@ -47,7 +47,7 @@ public:
                 mRightDelayKnob.setValue(mLeftDelayKnob.getValue());
             }
         }
-        else if(slider == &mRightDelayKnob)
+        if(slider == &mRightDelayKnob)
         {
             audioProcessor.adjustTimeDelay("right", mRightDelayKnob.getValue());
             if(mLinkButton.getToggleState())
@@ -55,27 +55,27 @@ public:
                 mLeftDelayKnob.setValue(mRightDelayKnob.getValue());
             }
         }
-        else if(slider == &mHighpassFilter)
+        if(slider == &mHighpassFilter)
         {
             audioProcessor.adjustHighpass(mHighpassFilter.getValue());
         }
-        else if(slider == &mLowpassFilter)
+        if(slider == &mLowpassFilter)
         {
             audioProcessor.adjustLowpass(mLowpassFilter.getValue());
         }
-        else if(slider == &mDryKnob)
+        if(slider == &mDryKnob)
         {
             audioProcessor.updateDry(mDryKnob.getValue());
         }
-        else if(slider == &mWetKnob)
+        if(slider == &mWetKnob)
         {
             audioProcessor.updateWet(mWetKnob.getValue());
         }
-        else if(slider == &mBypass)
+        if(slider == &mBypass)
         {
             audioProcessor.bypassToggle(mBypass.getValue());
         }
-        else if(slider == &mMonoSwitch)
+        if(slider == &mMonoSwitch)
         {
             audioProcessor.toggleMono(mMonoSwitch.getValue());
         }

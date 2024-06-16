@@ -39,6 +39,7 @@ void ButterworthLowpass::update()
 
 float ButterworthLowpass::filter(float in)
 {
+    jassert(mSampleRate > 0); 
     float out = (b0*in) + (b1*in1) + (b2*in2) - (a1*out1) - (a2*out2);
     updatePreviousValues(in, out);
     

@@ -25,15 +25,15 @@ treeState(*this, nullptr, "PARAMETERS",
     std::make_unique<juce::AudioParameterInt>("mFeedback", "Feedback", 0, 150, 15),
     std::make_unique<juce::AudioParameterInt>("mLeftDelay", "LeftDelay", 1, 2000, 200),
     std::make_unique<juce::AudioParameterInt>("mRightDelay", "RightDelay", 1, 2000, 200),
-    std::make_unique<juce::AudioParameterInt>("mHighpass", "Highpass", 20, 2000, 20),
-    std::make_unique<juce::AudioParameterInt>("mLowpass", "Highpass", 2000, 20000, 20000),
+    std::make_unique<juce::AudioParameterInt>("mHighpass", "Highpass", 20, 2000, 21),
+    std::make_unique<juce::AudioParameterInt>("mLowpass", "Lowpass", 2000, 20000, 20000),
     std::make_unique<juce::AudioParameterFloat>("mDry", "Dry", -64.0f, 0.0f, -1.0f),
     std::make_unique<juce::AudioParameterFloat>("mWet", "Wet", -64.0f, 0.0f, -1.0f),
     std::make_unique<juce::AudioParameterInt>("mBypass", "Bypass", 0, 1, 0),
     std::make_unique<juce::AudioParameterInt>("mMono", "Mono", 0, 1, 1),
     std::make_unique<juce::AudioParameterBool>("mLink", "Link", false)
 }),
-mFeedback(15), mMono(false), Bypass(false)
+mMono(false), Bypass(false)
 #endif
 {
     mLink = treeState.getRawParameterValue("mLink");
@@ -110,11 +110,11 @@ void MBRDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
 {
     // setup
     mDelayBuffer.setSampleRate(sampleRate);
-    mDelayBuffer.setFeedback(mFeedback);
-    mDelayBuffer.setTimeDelay("left", 200);
-    mDelayBuffer.setTimeDelay("right", 200);
-    mDelayBuffer.updateHighpassCutoff(20);
-    mDelayBuffer.updateLowpassCutoff(20000);
+    //mDelayBuffer.setFeedback(mFeedback);
+    /*mDelayBuffer.setTimeDelay("left", 200);
+    mDelayBuffer.setTimeDelay("right", 200); */
+    /*mDelayBuffer.updateHighpassCutoff(20);
+    mDelayBuffer.updateLowpassCutoff(20000);*/
     smoothedDry.reset(sampleRate, 0.01);
     smoothedWet.reset(sampleRate, 0.01);
 }
@@ -179,14 +179,14 @@ void MBRDelayAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juc
         auto* channelData = buffer.getWritePointer(leftChannel);
         if(Bypass)
         {
-            channelData[sample] = leftSample * juce::Decibels::decibelsToGain(mDryGain);
+            channelData[sample] = leftSample;
         } else
             channelData[sample] = (leftSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedLeftSample * juce::Decibels::decibelsToGain(mWetGain));
         
         channelData = buffer.getWritePointer(rightChannel);
         if(Bypass)
         {
-            channelData[sample] = rightSample * juce::Decibels::decibelsToGain(mDryGain);
+            channelData[sample] = rightSample;
         } else
             channelData[sample] = (rightSample * juce::Decibels::decibelsToGain(mDryGain)) + (delayedRightSample * juce::Decibels::decibelsToGain(mWetGain));
     }
