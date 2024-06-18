@@ -6,6 +6,15 @@
   <MAINGROUP id="DW7AHf" name="MBR-Delay">
     <GROUP id="{9B75919B-7456-68C6-0F2F-05575AA47068}" name="GUI">
       <GROUP id="{C8861C83-865C-70D4-CC2F-28CAD28C732F}" name="Images">
+        <FILE id="GJKtZw" name="MixModule.png" compile="0" resource="1" file="Images/MixModule.png"/>
+        <FILE id="vhpvWo" name="FeedbackModule.png" compile="0" resource="1"
+              file="Images/FeedbackModule.png"/>
+        <FILE id="F83Of4" name="FilterModule.png" compile="0" resource="1"
+              file="Images/FilterModule.png"/>
+        <FILE id="pP58LZ" name="TimeDelayModule.png" compile="0" resource="1"
+              file="Images/TimeDelayModule.png"/>
+        <FILE id="pKzmYN" name="backgroundNoModules.png" compile="0" resource="1"
+              file="Images/backgroundNoModules.png"/>
         <FILE id="u1lhP0" name="backgroundWithModules.png" compile="0" resource="1"
               file="Images/backgroundWithModules.png"/>
         <FILE id="N5kq3i" name="BypassBackground.png" compile="0" resource="1"

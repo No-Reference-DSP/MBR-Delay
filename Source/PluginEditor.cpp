@@ -151,11 +151,24 @@ void MBRDelayAudioProcessorEditor::paint (juce::Graphics& g)
     
     // Draw background
     
-    auto backgroundImage = juce::ImageCache::getFromMemory(BinaryData::backgroundWithModules_png, BinaryData::backgroundWithModules_pngSize);
+    auto backgroundImage = juce::ImageCache::getFromMemory(BinaryData::mbrBackground_png, BinaryData::mbrBackground_pngSize);
     g.drawImage(backgroundImage, getLocalBounds().toFloat());
+    
+    auto feedbackModuleImage = juce::ImageCache::getFromMemory(BinaryData::FeedbackModule_png, BinaryData::FeedbackModule_pngSize);
+    g.drawImage(feedbackModuleImage, 81, 39, 181, 202, 0, 0, 181, 202);
     
     auto bypassBackground = juce::ImageCache::getFromMemory(BinaryData::BypassBackground_png, BinaryData::BypassBackground_pngSize);
     g.drawImage(bypassBackground, 170, 298, 73, 33, 0, 0, 73, 33);
+    
+    auto timeDelayModuleImage = juce::ImageCache::getFromMemory(BinaryData::TimeDelayModule_png, BinaryData::TimeDelayModule_pngSize);
+    g.drawImage(timeDelayModuleImage, 282, 39, 181, 316, 0, 0, 181, 316);
+    
+    auto filterModuleImage = juce::ImageCache::getFromMemory(BinaryData::FilterModule_png, BinaryData::FilterModule_pngSize);
+    g.drawImage(filterModuleImage, 483, 39, 181, 316, 0, 0, 181, 316);
+    
+    auto mixModuleImage = juce::ImageCache::getFromMemory(BinaryData::MixModule_png, BinaryData::MixModule_pngSize);
+    g.drawImage(mixModuleImage, 684, 39, 181, 316, 0, 0, 181, 316);
+    
     
 }
 

@@ -50,7 +50,7 @@ public:
         juce::Slider::SliderLayout layout = juce::LookAndFeel_V2::getSliderLayout(slider);
         
         layout.textBoxBounds = juce::Rectangle<int> (0, 0, 73, 21);
-        layout.sliderBounds = juce::Rectangle<int> (0, 40, 74, 74);
+        layout.sliderBounds = juce::Rectangle<int> (1, 41, 71, 71);
 
         return layout;
     }

@@ -5321,6 +5321,21 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Images\MixModule.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
+    <None Include="..\..\Images\FeedbackModule.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
+    <None Include="..\..\Images\FilterModule.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
+    <None Include="..\..\Images\TimeDelayModule.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
+    <None Include="..\..\Images\backgroundNoModules.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
     <None Include="..\..\Images\backgroundWithModules.png">
       <Filter>MBR-Delay\GUI\Images</Filter>
     </None>

@@ -3083,6 +3083,11 @@
     <ClInclude Include="..\..\JuceLibraryCode\JucePluginDefines.h"/>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\Images\MixModule.png"/>
+    <None Include="..\..\Images\FeedbackModule.png"/>
+    <None Include="..\..\Images\FilterModule.png"/>
+    <None Include="..\..\Images\TimeDelayModule.png"/>
+    <None Include="..\..\Images\backgroundNoModules.png"/>
     <None Include="..\..\Images\backgroundWithModules.png"/>
     <None Include="..\..\Images\BypassBackground.png"/>
     <None Include="..\..\Images\BypassSwitchOff.png"/>
