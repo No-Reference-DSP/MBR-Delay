@@ -56,7 +56,7 @@ MBRDelayAudioProcessorEditor::MBRDelayAudioProcessorEditor (MBRDelayAudioProcess
     mHighpassFilter.setTextValueSuffix("Hz");
     mHighpassFilter.setRotaryParameters(3.92699, 8.63938, true);
     mHighpassFilter.setRange(20, 2000, 1);
-    mHighpassFilter.setValue(21);
+    mHighpassFilter.setValue(30);
     mHighpassFilter.addListener(this);
     addAndMakeVisible(mHighpassFilter);
     highpassValue = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(audioProcessor.treeState, "mHighpass", mHighpassFilter);
