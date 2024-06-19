@@ -157,8 +157,11 @@ void MBRDelayAudioProcessorEditor::paint (juce::Graphics& g)
     auto feedbackModuleImage = juce::ImageCache::getFromMemory(BinaryData::FeedbackModule_png, BinaryData::FeedbackModule_pngSize);
     g.drawImage(feedbackModuleImage, 81, 39, 181, 202, 0, 0, 181, 202);
     
-    auto bypassBackground = juce::ImageCache::getFromMemory(BinaryData::BypassBackground_png, BinaryData::BypassBackground_pngSize);
-    g.drawImage(bypassBackground, 170, 298, 73, 33, 0, 0, 73, 33);
+    auto bypassBackground = juce::ImageCache::getFromMemory(BinaryData::BypassModule_png, BinaryData::BypassModule_pngSize);
+    g.drawImage(bypassBackground, 81, 251, 181, 204, 0, 0, 181, 204);
+    
+    auto bypassSwitchBackground = juce::ImageCache::getFromMemory(BinaryData::BypassBackground_png, BinaryData::BypassBackground_pngSize);
+    g.drawImage(bypassSwitchBackground, 170, 298, 73, 33, 0, 0, 73, 33);
     
     auto timeDelayModuleImage = juce::ImageCache::getFromMemory(BinaryData::TimeDelayModule_png, BinaryData::TimeDelayModule_pngSize);
     g.drawImage(timeDelayModuleImage, 282, 39, 181, 316, 0, 0, 181, 316);

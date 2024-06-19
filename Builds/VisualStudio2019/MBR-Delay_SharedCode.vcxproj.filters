@@ -5330,6 +5330,9 @@
     <None Include="..\..\Images\FilterModule.png">
       <Filter>MBR-Delay\GUI\Images</Filter>
     </None>
+    <None Include="..\..\Images\BypassModule.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
     <None Include="..\..\Images\TimeDelayModule.png">
       <Filter>MBR-Delay\GUI\Images</Filter>
     </None>

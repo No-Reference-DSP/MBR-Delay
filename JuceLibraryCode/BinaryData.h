@@ -17,6 +17,9 @@ namespace BinaryData
     extern const char*   FilterModule_png;
     const int            FilterModule_pngSize = 3160;
 
+    extern const char*   BypassModule_png;
+    const int            BypassModule_pngSize = 2471;
+
     extern const char*   TimeDelayModule_png;
     const int            TimeDelayModule_pngSize = 4135;
 
@@ -45,7 +48,7 @@ namespace BinaryData
     const int            mbrBackground_pngSize = 6361;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 12;
+    const int namedResourceListSize = 13;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];

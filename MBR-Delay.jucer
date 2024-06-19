@@ -11,6 +11,8 @@
               file="Images/FeedbackModule.png"/>
         <FILE id="F83Of4" name="FilterModule.png" compile="0" resource="1"
               file="Images/FilterModule.png"/>
+        <FILE id="lDEKCK" name="BypassModule.png" compile="0" resource="1"
+              file="Images/BypassModule.png"/>
         <FILE id="pP58LZ" name="TimeDelayModule.png" compile="0" resource="1"
               file="Images/TimeDelayModule.png"/>
         <FILE id="pKzmYN" name="backgroundNoModules.png" compile="0" resource="1"

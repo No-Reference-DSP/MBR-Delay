@@ -3086,6 +3086,7 @@
     <None Include="..\..\Images\MixModule.png"/>
     <None Include="..\..\Images\FeedbackModule.png"/>
     <None Include="..\..\Images\FilterModule.png"/>
+    <None Include="..\..\Images\BypassModule.png"/>
     <None Include="..\..\Images\TimeDelayModule.png"/>
     <None Include="..\..\Images\backgroundNoModules.png"/>
     <None Include="..\..\Images\backgroundWithModules.png"/>

@@ -127,6 +127,7 @@
 		9CF56E5E6982C0EF2062C59F /* MixLAF.h */ /* MixLAF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MixLAF.h; path = ../../Source/MixLAF.h; sourceTree = SOURCE_ROOT; };
 		9D13BB8B2859570372172988 /* ButterworthHighpass.h */ /* ButterworthHighpass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ButterworthHighpass.h; path = ../../Source/ButterworthHighpass.h; sourceTree = SOURCE_ROOT; };
 		9F29D8339CDDA85822D972CB /* FilterLAF.h */ /* FilterLAF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FilterLAF.h; path = ../../Source/FilterLAF.h; sourceTree = SOURCE_ROOT; };
+		A14C9578AE669A5F3A53DF4B /* BypassModule.png */ /* BypassModule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BypassModule.png; path = ../../Images/BypassModule.png; sourceTree = SOURCE_ROOT; };
 		A9D745B7DC865A9FC33701C0 /* include_juce_audio_plugin_client_VST_utils.mm */ /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		AA4D23A36FF0062DD15E071A /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
 		AD0F6DAE8499C59B663ABA21 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = "~/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
@@ -268,6 +269,7 @@
 				3898254CC54229E516F234A5,
 				12185932A9F9D3065292967D,
 				28AFF885CEC091E9C5CF2B93,
+				A14C9578AE669A5F3A53DF4B,
 				6E16866D5469EDE8B7DFE9E2,
 				7F19CD4604AC480885E0AEAC,
 				573C1572028E386CA374968F,
