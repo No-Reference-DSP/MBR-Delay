@@ -89,12 +89,12 @@ public:
     void reset()
     {
         writeIndex = 0;
-        leftDelayTime = 600;
-        rightDelayTime = 600;
-        mFeedback = 0.7f;
+        /*leftDelayTime = 600;
+        rightDelayTime = 600;*/
+        /*mFeedback = 0.7f;*/
         
-        memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE-1);
-        memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE-1);
+        memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE);
+        memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE);
         
         // reset filters as well
         mLeftLowpass.reset();
