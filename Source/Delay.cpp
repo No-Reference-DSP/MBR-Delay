@@ -26,6 +26,7 @@ Delay::~Delay() {
      */
 }
 
+// ==========================================================
 float Delay::doLeftDelay(float leftInput)
 {
     jassert(mSampleRate > 0);
@@ -94,3 +95,60 @@ float Delay::doRightDelay(float rightInput)
     
     return filteredOutput;
 }
+// ==========================================================
+// ==========================================================
+// Setters
+
+void Delay::setSampleRate(double sampleRate)
+{
+    mSampleRate = sampleRate;
+    //filters
+    mLeftLowpass.setSampleRate(sampleRate);   // left lowpass
+    mLeftHighpass.setSampleRate(sampleRate);  // left highpass
+    mRightLowpass.setSampleRate(sampleRate);  // right lowpass
+    mRightHighpass.setSampleRate(sampleRate); // right highpass
+    
+    // smoothing
+    mSmoothedFeedback.reset(sampleRate, 0.05);
+    mSmoothedLeftDelayTime.reset(sampleRate, 0.07);
+    mSmoothedRightDelayTime.reset(sampleRate, 0.07);
+}
+
+void Delay::setFeedback(double fb)
+{
+    mFeedback = fb*0.01;
+}
+
+void Delay::setTimeDelay(std::string name, int ms)
+{
+    if(name == "left")
+        mSmoothedLeftDelayTime.setTargetValue(ms);
+    else if(name == "right")
+        mSmoothedRightDelayTime.setTargetValue(ms);
+}
+
+void Delay::reset()
+{
+    writeIndex = 0;
+    memset(leftDelayBuffer , 0, DELAY_BUFFER_SIZE);
+    memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE);
+    
+    //filter resets
+    mLeftLowpass.reset();       // left lowpass
+    mLeftHighpass.reset();      // left highpass
+    mRightLowpass.reset();      // right lowpass
+    mRightHighpass.reset();     // right highpass
+}
+
+void Delay::updateHighpassCutoff(int hz)
+{
+    mLeftHighpass.setFrequencyCutoff(hz);
+    mRightHighpass.setFrequencyCutoff(hz);
+}
+
+void Delay::updateLowpassCutoff(int hz)
+{
+    mLeftLowpass.setFrequencyCutoff(hz);
+    mRightLowpass.setFrequencyCutoff(hz);
+}
+// ==========================================================

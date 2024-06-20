@@ -28,7 +28,6 @@
 		04C54DC0F6417E542C0CE735 /* Foundation.framework */ = {isa = PBXBuildFile; fileRef = C8A0C7D16FFCACFB825A010A; };
 		09E6CBE55B9F9170DF19236C /* include_juce_audio_processors.mm */ = {isa = PBXBuildFile; fileRef = 472ED35E96AFD044FDE9367F; };
 		0C97E591F29232A99EF3E223 /* include_juce_audio_devices.mm */ = {isa = PBXBuildFile; fileRef = 15FAD52F97F226FCB7B84D12; };
-		12FD9CE14A4AEE16B2BA8919 /* include_juce_audio_plugin_client_ARA.cpp */ = {isa = PBXBuildFile; fileRef = AFD76A88D6417B9AA859483C; };
 		1B3C99289C39713439DCF59F /* Delay.cpp */ = {isa = PBXBuildFile; fileRef = 8F4CC4518FE427F86F8840D3; };
 		253E7B30FF6B2A3E357A9AA8 /* include_juce_events.mm */ = {isa = PBXBuildFile; fileRef = E0EF29968EA0245B8D94B7A2; };
 		260B04DA3826905B615A5307 /* DiscRecording.framework */ = {isa = PBXBuildFile; fileRef = 8E08EA8F50CE7E5947BC1A33; };
@@ -42,14 +41,12 @@
 		4E1CE64E040909B2203FB30B /* Shared Code */ = {isa = PBXBuildFile; fileRef = 0907D322467D581E8BBD9FCF; };
 		5A8E24FB47944FBEB332E1EB /* include_juce_data_structures.mm */ = {isa = PBXBuildFile; fileRef = 05CB635BEF6A3F85B5C02AED; };
 		5AEA65C07C1563F7FBEFD46E /* PluginProcessor.cpp */ = {isa = PBXBuildFile; fileRef = 04D63178BAB75DCFE024DD67; };
-		5EB267B298B54CFD21A7202D /* include_juce_audio_processors_lv2_libs.cpp */ = {isa = PBXBuildFile; fileRef = B9ED44FD0807815178F154AA; };
 		61544D59D37D9D07DD4AA5DF /* include_juce_audio_formats.mm */ = {isa = PBXBuildFile; fileRef = FE9914C9052EB346B7B2C611; };
 		656D0384DAC6C05EB6698E95 /* Accelerate.framework */ = {isa = PBXBuildFile; fileRef = 3546B5E9EE02BC3BECE8E832; };
 		65AB3D1DEED8BC16B206FE85 /* ButterworthLowpass.cpp */ = {isa = PBXBuildFile; fileRef = 41BD6746F5F7E75BA659D4D4; };
 		6E0AE3854189D11546E68962 /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXBuildFile; fileRef = A9D745B7DC865A9FC33701C0; };
 		89C312A81E9AC83091844B3A /* include_juce_audio_plugin_client_AU_1.mm */ = {isa = PBXBuildFile; fileRef = 782EE5FB3E966690A791F0EB; };
 		8C8D4ED530D5F9A8C6894E30 /* CoreAudio.framework */ = {isa = PBXBuildFile; fileRef = EA500D11B88BDB0054AC9139; };
-		9439C42F701663F489E31D85 /* include_juce_audio_processors_ara.cpp */ = {isa = PBXBuildFile; fileRef = EFB6EF6FCA5AD6F3CC2582A5; };
 		96C00A3D1FD080B61D18EB74 /* include_juce_audio_basics.mm */ = {isa = PBXBuildFile; fileRef = 516E676948A654ECCD6F2689; };
 		9D354F2236CC5094C13FC124 /* include_juce_audio_plugin_client_utils.cpp */ = {isa = PBXBuildFile; fileRef = 7408172C691630E69CC12459; };
 		A0697B39C81D07FF37B6B927 /* PluginEditor.cpp */ = {isa = PBXBuildFile; fileRef = 348E51845AE8EEAFC563D2EB; };
@@ -57,8 +54,10 @@
 		AE1045F3AEED1C98EB12004E /* include_juce_gui_extra.mm */ = {isa = PBXBuildFile; fileRef = 66E647C8241CBEAA5B6089C1; };
 		B4D6EFDB3DD72000F58F7685 /* include_juce_audio_plugin_client_AU_2.mm */ = {isa = PBXBuildFile; fileRef = 0E4862FC2E88DE5FDEA66E64; };
 		B60822E2FAEFE4491E4C207F /* QuartzCore.framework */ = {isa = PBXBuildFile; fileRef = B186394ADDA93CABBEF4967A; };
+		BCFFA87EE11E3B2FBD328AD8 /* Carbon.framework */ = {isa = PBXBuildFile; fileRef = 3495FFF091B408287967A557; };
 		C1662A85CB1713A67A8F9B48 /* AU */ = {isa = PBXBuildFile; fileRef = 9CC2C1F2243F8D124A3E8E0E; };
 		C54C4D6C21F4AFC09C88DB23 /* Standalone Plugin */ = {isa = PBXBuildFile; fileRef = 5DC8F705EB4B6FD6210F40BA; };
+		D00F94D8E6F4369F4B194D30 /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXBuildFile; fileRef = FD90D82363ED917D31D2B53D; };
 		D175A2352734D82062E26594 /* RecentFilesMenuTemplate.nib */ = {isa = PBXBuildFile; fileRef = C8774D73B1283C38F6197D12; };
 		E63C1D4A060F8A7CFBF9867B /* AudioUnit.framework */ = {isa = PBXBuildFile; fileRef = 6B73BB0B5A9EC457CE028971; };
 		E738769A36235AC41BC957B2 /* include_juce_dsp.mm */ = {isa = PBXBuildFile; fileRef = 0D2521045CA61260FB4D677D; };
@@ -88,6 +87,7 @@
 		28AFF885CEC091E9C5CF2B93 /* FilterModule.png */ /* FilterModule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = FilterModule.png; path = ../../Images/FilterModule.png; sourceTree = SOURCE_ROOT; };
 		2D68B478050CD5EAA664442D /* MonoLAF.h */ /* MonoLAF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MonoLAF.h; path = ../../Source/MonoLAF.h; sourceTree = SOURCE_ROOT; };
 		348E51845AE8EEAFC563D2EB /* PluginEditor.cpp */ /* PluginEditor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PluginEditor.cpp; path = ../../Source/PluginEditor.cpp; sourceTree = SOURCE_ROOT; };
+		3495FFF091B408287967A557 /* Carbon.framework */ /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		3546B5E9EE02BC3BECE8E832 /* Accelerate.framework */ /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3898254CC54229E516F234A5 /* MixModule.png */ /* MixModule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = MixModule.png; path = ../../Images/MixModule.png; sourceTree = SOURCE_ROOT; };
 		3B85FB6B712A7AC327B4557C /* include_juce_core.mm */ /* include_juce_core.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_core.mm; path = ../../JuceLibraryCode/include_juce_core.mm; sourceTree = SOURCE_ROOT; };
@@ -131,13 +131,11 @@
 		A9D745B7DC865A9FC33701C0 /* include_juce_audio_plugin_client_VST_utils.mm */ /* include_juce_audio_plugin_client_VST_utils.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_plugin_client_VST_utils.mm; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST_utils.mm; sourceTree = SOURCE_ROOT; };
 		AA4D23A36FF0062DD15E071A /* PluginProcessor.h */ /* PluginProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginProcessor.h; path = ../../Source/PluginProcessor.h; sourceTree = SOURCE_ROOT; };
 		AD0F6DAE8499C59B663ABA21 /* juce_audio_formats */ /* juce_audio_formats */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_formats; path = "~/JUCE/modules/juce_audio_formats"; sourceTree = "<absolute>"; };
-		AFD76A88D6417B9AA859483C /* include_juce_audio_plugin_client_ARA.cpp */ /* include_juce_audio_plugin_client_ARA.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_ARA.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_ARA.cpp; sourceTree = SOURCE_ROOT; };
 		B037D9DDA06CE959AD33571B /* BinaryData.cpp */ /* BinaryData.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BinaryData.cpp; path = ../../JuceLibraryCode/BinaryData.cpp; sourceTree = SOURCE_ROOT; };
 		B186394ADDA93CABBEF4967A /* QuartzCore.framework */ /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B48E4235C3BB9F53BD8729A4 /* IOKit.framework */ /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		B73C066CE7D21765539CC690 /* Info-AU.plist */ /* Info-AU.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-AU.plist"; path = "Info-AU.plist"; sourceTree = SOURCE_ROOT; };
 		B96F396D2D11589A7C3C1C6D /* include_juce_audio_plugin_client_VST3.cpp */ /* include_juce_audio_plugin_client_VST3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_plugin_client_VST3.cpp; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_VST3.cpp; sourceTree = SOURCE_ROOT; };
-		B9ED44FD0807815178F154AA /* include_juce_audio_processors_lv2_libs.cpp */ /* include_juce_audio_processors_lv2_libs.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_processors_lv2_libs.cpp; path = ../../JuceLibraryCode/include_juce_audio_processors_lv2_libs.cpp; sourceTree = SOURCE_ROOT; };
 		C15065436CEF35BAE238796B /* CoreAudioKit.framework */ /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
 		C8774D73B1283C38F6197D12 /* RecentFilesMenuTemplate.nib */ /* RecentFilesMenuTemplate.nib */ = {isa = PBXFileReference; lastKnownFileType = file.nib; name = RecentFilesMenuTemplate.nib; path = RecentFilesMenuTemplate.nib; sourceTree = SOURCE_ROOT; };
 		C8A0C7D16FFCACFB825A010A /* Foundation.framework */ /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,9 +151,9 @@
 		E9A4E7BC4120F3FF4A884142 /* juce_audio_basics */ /* juce_audio_basics */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_audio_basics; path = "~/JUCE/modules/juce_audio_basics"; sourceTree = "<absolute>"; };
 		EA500D11B88BDB0054AC9139 /* CoreAudio.framework */ /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		EF3B23668ADA33F1EC6593C4 /* WebKit.framework */ /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		EFB6EF6FCA5AD6F3CC2582A5 /* include_juce_audio_processors_ara.cpp */ /* include_juce_audio_processors_ara.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = include_juce_audio_processors_ara.cpp; path = ../../JuceLibraryCode/include_juce_audio_processors_ara.cpp; sourceTree = SOURCE_ROOT; };
 		F5A0DB577B1C3A19F6AD0056 /* juce_events */ /* juce_events */ = {isa = PBXFileReference; lastKnownFileType = folder; name = juce_events; path = "~/JUCE/modules/juce_events"; sourceTree = "<absolute>"; };
 		F91C44B2A0856E7439252852 /* JuceHeader.h */ /* JuceHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JuceHeader.h; path = ../../JuceLibraryCode/JuceHeader.h; sourceTree = SOURCE_ROOT; };
+		FD90D82363ED917D31D2B53D /* include_juce_audio_plugin_client_AU.r */ /* include_juce_audio_plugin_client_AU.r */ = {isa = PBXFileReference; lastKnownFileType = file.r; name = include_juce_audio_plugin_client_AU.r; path = ../../JuceLibraryCode/include_juce_audio_plugin_client_AU.r; sourceTree = SOURCE_ROOT; };
 		FE9914C9052EB346B7B2C611 /* include_juce_audio_formats.mm */ /* include_juce_audio_formats.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; name = include_juce_audio_formats.mm; path = ../../JuceLibraryCode/include_juce_audio_formats.mm; sourceTree = SOURCE_ROOT; };
 		FEA3B9D27255E1FB5867D750 /* ButterworthHighpass.cpp */ /* ButterworthHighpass.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = ButterworthHighpass.cpp; path = ../../Source/ButterworthHighpass.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -168,6 +166,7 @@
 				E63C1D4A060F8A7CFBF9867B,
 				656D0384DAC6C05EB6698E95,
 				0091502A2866CFB73C4C3E05,
+				BCFFA87EE11E3B2FBD328AD8,
 				4B4C147750C0715CBCD2EBEC,
 				8C8D4ED530D5F9A8C6894E30,
 				4B482563FD79ABD32CCE0B39,
@@ -186,6 +185,7 @@
 			files = (
 				656D0384DAC6C05EB6698E95,
 				0091502A2866CFB73C4C3E05,
+				BCFFA87EE11E3B2FBD328AD8,
 				4B4C147750C0715CBCD2EBEC,
 				8C8D4ED530D5F9A8C6894E30,
 				4B482563FD79ABD32CCE0B39,
@@ -204,6 +204,7 @@
 			files = (
 				656D0384DAC6C05EB6698E95,
 				0091502A2866CFB73C4C3E05,
+				BCFFA87EE11E3B2FBD328AD8,
 				4B4C147750C0715CBCD2EBEC,
 				8C8D4ED530D5F9A8C6894E30,
 				4B482563FD79ABD32CCE0B39,
@@ -288,6 +289,7 @@
 				6B73BB0B5A9EC457CE028971,
 				3546B5E9EE02BC3BECE8E832,
 				00E4389F37750EBDE74AA922,
+				3495FFF091B408287967A557,
 				5D5731FB173D9CBF45D7A9E5,
 				EA500D11B88BDB0054AC9139,
 				C15065436CEF35BAE238796B,
@@ -309,7 +311,7 @@
 				516E676948A654ECCD6F2689,
 				15FAD52F97F226FCB7B84D12,
 				FE9914C9052EB346B7B2C611,
-				AFD76A88D6417B9AA859483C,
+				FD90D82363ED917D31D2B53D,
 				782EE5FB3E966690A791F0EB,
 				0E4862FC2E88DE5FDEA66E64,
 				8D8FD66FF31D7F81A2D5AE3E,
@@ -317,8 +319,6 @@
 				A9D745B7DC865A9FC33701C0,
 				B96F396D2D11589A7C3C1C6D,
 				472ED35E96AFD044FDE9367F,
-				EFB6EF6FCA5AD6F3CC2582A5,
-				B9ED44FD0807815178F154AA,
 				6C5AB652B36C3B254E77093B,
 				3B85FB6B712A7AC327B4557C,
 				05CB635BEF6A3F85B5C02AED,
@@ -434,6 +434,7 @@
 			buildConfigurationList = 37F3477728909D0A0799AF31;
 			buildPhases = (
 				9F029A3A225C3A3F7B475D60,
+				DCEA2F995C053120263CC81A,
 				159C36E6F0081CE49C16786B,
 				2F627716567FF1BA33C226F9,
 			);
@@ -471,7 +472,7 @@
 		BEEEA9E9B209E12516D2F88E = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					1E6D5D53805F3EFF990F2DFE = {
@@ -633,6 +634,17 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXRezBuildPhase section */
+		DCEA2F995C053120263CC81A = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D00F94D8E6F4369F4B194D30,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03088B193AD92DC2F9E66AC5 = {
 			isa = PBXSourcesBuildPhase;
@@ -655,12 +667,9 @@
 				96C00A3D1FD080B61D18EB74,
 				0C97E591F29232A99EF3E223,
 				61544D59D37D9D07DD4AA5DF,
-				12FD9CE14A4AEE16B2BA8919,
 				9D354F2236CC5094C13FC124,
 				6E0AE3854189D11546E68962,
 				09E6CBE55B9F9170DF19236C,
-				9439C42F701663F489E31D85,
-				5EB267B298B54CFD21A7202D,
 				48E92CA245030F84D223ADE2,
 				299BE0F60128F2D955757236,
 				5A8E24FB47944FBEB332E1EB,
@@ -726,9 +735,10 @@
 		00121345B0475A237F33C26F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -740,7 +750,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -761,16 +771,15 @@
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=0",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=1",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -791,6 +800,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -802,11 +816,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -817,15 +826,15 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
 				INFOPLIST_PREPROCESS = NO;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-lMBR-Delay -weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-lMBR-Delay";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
 				USE_HEADERMAP = NO;
@@ -836,9 +845,10 @@
 		01394125FAF08642D7E8A030 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -850,7 +860,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -871,16 +881,15 @@
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=1",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -901,6 +910,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -912,11 +926,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -928,14 +937,13 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
 				SKIP_INSTALL = YES;
@@ -947,7 +955,7 @@
 		13363DA3794D9BDA51995C6C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -955,9 +963,10 @@
 		34DEED2DA0D8E5B3D60AEE2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -971,7 +980,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -992,16 +1001,15 @@
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -1022,6 +1030,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -1033,11 +1046,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -1049,16 +1057,16 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-AU.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-bundle -lMBR-Delay -weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-bundle -lMBR-Delay";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -d arm64_$arm64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\" -I \"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
@@ -1090,6 +1098,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -1118,9 +1127,10 @@
 		532E2622D8DF8E50A61189E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -1132,7 +1142,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1153,16 +1163,15 @@
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=1",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -1183,6 +1192,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -1194,11 +1208,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -1210,13 +1219,12 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
 				SKIP_INSTALL = YES;
@@ -1228,7 +1236,7 @@
 		892B7C88078A18887936B158 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -1236,9 +1244,10 @@
 		94FE7C5AA7F836C6F8C290EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1252,7 +1261,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1273,16 +1282,15 @@
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=1",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -1303,6 +1311,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -1314,11 +1327,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -1330,7 +1338,7 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-AU.plist;
@@ -1338,9 +1346,9 @@
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/Components/";
 				LIBRARY_STYLE = Bundle;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-bundle -lMBR-Delay -weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-bundle -lMBR-Delay";
 				OTHER_REZFLAGS = "-d ppc_$ppc -d i386_$i386 -d ppc64_$ppc64 -d x86_64_$x86_64 -d arm64_$arm64 -I /System/Library/Frameworks/CoreServices.framework/Frameworks/CarbonCore.framework/Versions/A/Headers -I \"$(DEVELOPER_DIR)/Extras/CoreAudio/AudioUnits/AUPublic/AUBase\" -I \"$(DEVELOPER_DIR)/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/AudioUnit.framework/Headers\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
@@ -1353,9 +1361,10 @@
 		D5A5F6C76B4B0F77C841B881 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				DEAD_CODE_STRIPPING = YES;
@@ -1369,7 +1378,7 @@
 					"NDEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1390,16 +1399,15 @@
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=0",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -1420,6 +1428,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -1431,11 +1444,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -1447,7 +1455,7 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-VST3.plist;
@@ -1455,9 +1463,9 @@
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
 				LIBRARY_STYLE = Bundle;
 				LLVM_LTO = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-bundle -lMBR-Delay -weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-bundle -lMBR-Delay";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
 				USE_HEADERMAP = NO;
@@ -1469,9 +1477,10 @@
 		ECFF4766FF859EA2741FD094 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -1483,7 +1492,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1504,16 +1513,15 @@
 					"JucePlugin_Build_VST3=0",
 					"JucePlugin_Build_AU=0",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=1",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -1534,6 +1542,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -1545,11 +1558,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -1560,14 +1568,14 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-Standalone_Plugin.plist;
 				INFOPLIST_PREPROCESS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-lMBR-Delay -weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-lMBR-Delay";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
 				USE_HEADERMAP = NO;
@@ -1597,6 +1605,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = NO;
@@ -1626,9 +1635,10 @@
 		F14C6F664AFC377E872F02CE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "c++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_LINK_OBJC_RUNTIME = NO;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				CONFIGURATION_BUILD_DIR = "$(PROJECT_DIR)/build/$(CONFIGURATION)";
 				COPY_PHASE_STRIP = NO;
@@ -1642,7 +1652,7 @@
 					"DEBUG=1",
 					"JUCE_DISPLAY_SPLASH_SCREEN=1",
 					"JUCE_USE_DARK_SPLASH_SCREEN=1",
-					"JUCE_PROJUCER_VERSION=0x70005",
+					"JUCE_PROJUCER_VERSION=0x60106",
 					"JUCE_MODULE_AVAILABLE_juce_audio_basics=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_devices=1",
 					"JUCE_MODULE_AVAILABLE_juce_audio_formats=1",
@@ -1663,16 +1673,15 @@
 					"JucePlugin_Build_VST3=1",
 					"JucePlugin_Build_AU=0",
 					"JucePlugin_Build_AUv3=0",
+					"JucePlugin_Build_RTAS=0",
 					"JucePlugin_Build_AAX=0",
 					"JucePlugin_Build_Standalone=0",
 					"JucePlugin_Build_Unity=0",
-					"JucePlugin_Build_LV2=0",
 					"JucePlugin_Enable_IAA=0",
-					"JucePlugin_Enable_ARA=0",
 					"JucePlugin_Name=\\\"MBR-Delay\\\"",
 					"JucePlugin_Desc=\\\"MBR-Delay\\\"",
 					"JucePlugin_Manufacturer=\\\"Apedustrial\\ Software\\\"",
-					"JucePlugin_ManufacturerWebsite=\\\"www.yourcompany.com\\\"",
+					"JucePlugin_ManufacturerWebsite=\\\"\\\"",
 					"JucePlugin_ManufacturerEmail=\\\"\\\"",
 					"JucePlugin_ManufacturerCode=0x4d616e75",
 					"JucePlugin_PluginCode=0x56617266",
@@ -1693,6 +1702,11 @@
 					"JucePlugin_AUExportPrefixQuoted=\\\"MBRDelayAU\\\"",
 					"JucePlugin_AUManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_CFBundleIdentifier=com.yourcompany.MBRDelay",
+					"JucePlugin_RTASCategory=0",
+					"JucePlugin_RTASManufacturerCode=JucePlugin_ManufacturerCode",
+					"JucePlugin_RTASProductId=JucePlugin_PluginCode",
+					"JucePlugin_RTASDisableBypass=0",
+					"JucePlugin_RTASDisableMultiMono=0",
 					"JucePlugin_AAXIdentifier=com.yourcompany.MBRDelay",
 					"JucePlugin_AAXManufacturerCode=JucePlugin_ManufacturerCode",
 					"JucePlugin_AAXProductId=JucePlugin_PluginCode",
@@ -1704,11 +1718,6 @@
 					"JucePlugin_IAAName=\\\"Apedustrial\\ Software:\\ MBR-Delay\\\"",
 					"JucePlugin_VSTNumMidiInputs=16",
 					"JucePlugin_VSTNumMidiOutputs=16",
-					"JucePlugin_ARAContentTypes=0",
-					"JucePlugin_ARATransformationFlags=0",
-					"JucePlugin_ARAFactoryID=\\\"com.yourcompany.MBRDelay.factory\\\"",
-					"JucePlugin_ARADocumentArchiveID=\\\"com.yourcompany.MBRDelay.aradocumentarchive.1.0.0\\\"",
-					"JucePlugin_ARACompatibleArchiveIDs=\\\"\\\"",
 					"JUCE_STANDALONE_APPLICATION=JucePlugin_Build_Standalone",
 					"JUCER_XCODE_MAC_F6D2F4CF=1",
 					"JUCE_APP_VERSION=1.0.0",
@@ -1720,16 +1729,16 @@
 					"$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK",
 					"$(SRCROOT)/../../JuceLibraryCode",
 					"$(HOME)/JUCE/modules",
-					"$(HOME)/JUCE/modules/juce_audio_plugin_client/AU",
+					"$(HOME)/JUCE/modules/juce_audio_plugin_client",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Info-VST3.plist;
 				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "$(HOME)/Library/Audio/Plug-Ins/VST3/";
 				LIBRARY_STYLE = Bundle;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client/AU";
-				OTHER_LDFLAGS = "-bundle -lMBR-Delay -weak_framework Metal -weak_framework MetalKit";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_HEADER_SEARCH_PATHS = "$(HOME)/JUCE/modules/juce_audio_processors/format_types/VST3_SDK $(SRCROOT)/../../JuceLibraryCode $(HOME)/JUCE/modules $(HOME)/JUCE/modules/juce_audio_plugin_client";
+				OTHER_LDFLAGS = "-bundle -lMBR-Delay";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.MBRDelay;
 				PRODUCT_NAME = "MBR-Delay";
 				USE_HEADERMAP = NO;

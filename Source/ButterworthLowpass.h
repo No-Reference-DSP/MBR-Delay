@@ -34,17 +34,13 @@ public:
     
     // Setters
     void update();
+    void setSampleRate(double sampleRate);
+    void setFrequencyCutoff(int hz);
+    void reset();
     
     inline void setOmega()
     {
         omega = tan((PI * mFrequencyCutoff) / mSampleRate);
-    }
-    
-    inline void setSampleRate(double sampleRate)
-    {
-        mSampleRate = sampleRate;
-        // for smoothing
-        smoothedFrequencyCutoff.reset(sampleRate, 0.03);
     }
     
     inline void updatePreviousValues(float incoming, float outgoing)
@@ -56,24 +52,9 @@ public:
         in1 = incoming;
     }
     
-    inline void setFrequencyCutoff(int hz)
-    {
-        smoothedFrequencyCutoff.setTargetValue(hz);
-    }
-    
     inline void updateFrequencyCutoff()
     {
         mFrequencyCutoff = static_cast<float>(smoothedFrequencyCutoff.getNextValue());
-    }
-
-    inline void reset()
-    {
-        a0 = 1; a1 = 0; a2 = 0;
-        b0 = 0; b1 = 0; b2 = 0;
-        
-        in1 = 0; in2 = 0;
-        out1 = 0; out2 = 0;
-        setOmega();
     }
     
 private:

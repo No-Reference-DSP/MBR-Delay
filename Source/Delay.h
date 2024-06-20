@@ -30,90 +30,34 @@ public:
     float doRightDelay(float rightChannelData);
     
     // Setters
+    void setSampleRate(double sampleRate);
+    void setFeedback(double fb);
+    void setTimeDelay(std::string name, int ms);
+    void updateHighpassCutoff(int hz);
+    void updateLowpassCutoff(int hz);
+    void reset();
+    
     inline void incrementWrite()
     {
         if(++writeIndex >= DELAY_BUFFER_SIZE)
             writeIndex = 0;
     }
     
-    void setSampleRate(double sampleRate)
-    {
-        mSampleRate = sampleRate;
-        
-        // for the filters
-        mLeftLowpass.setSampleRate(sampleRate);
-        mRightLowpass.setSampleRate(sampleRate);
-        
-        mLeftHighpass.setSampleRate(sampleRate);
-        mRightHighpass.setSampleRate(sampleRate);
-        
-        // for the smoothing
-        mSmoothedFeedback.reset(sampleRate, 0.05);
-        mSmoothedLeftDelayTime.reset(sampleRate, 0.07);
-        mSmoothedRightDelayTime.reset(sampleRate, 0.07);
-    }
-    
-    inline void setFeedback(double fb) {
-        mFeedback = fb*0.01;
-    }
-    
-    inline void setTimeDelay(std::string name, int ms)
-    {
-        if(name == "left")
-        {
-            mSmoothedLeftDelayTime.setTargetValue(ms);
-        }
-        else if(name == "right")
-        {
-            mSmoothedRightDelayTime.setTargetValue(ms);
-        }
-    }
-    
     inline void updateTimeDelay(){
         leftDelayTime = mSmoothedLeftDelayTime.getNextValue();
         rightDelayTime = mSmoothedRightDelayTime.getNextValue();
     }
-    
-    inline void updateHighpassCutoff(int hz)
-    {
-        mLeftHighpass.setFrequencyCutoff(hz);
-        mRightHighpass.setFrequencyCutoff(hz);
-    }
-    
-    inline void updateLowpassCutoff(int hz)
-    {
-        mLeftLowpass.setFrequencyCutoff(hz);
-        mRightLowpass.setFrequencyCutoff(hz);
-    }
-    
-    void reset()
-    {
-        writeIndex = 0;
-        /*leftDelayTime = 600;
-        rightDelayTime = 600;*/
-        /*mFeedback = 0.7f;*/
-        
-        memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE);
-        memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE);
-        
-        // reset filters as well
-        mLeftLowpass.reset();
-        mRightLowpass.reset();
-        
-        mLeftHighpass.reset();
-        mRightHighpass.reset();
-    }
-    
+
     // Getters
     inline float getReadIndex(int delayTime)
     {
         // convert sampleRate to ms by /1000
-        float rI = writeIndex - ((mSampleRate/1000) * delayTime);
+        float readIndex = writeIndex - ((mSampleRate/1000) * delayTime);
         
-        if(rI < 0)
-            return DELAY_BUFFER_SIZE + rI;
+        if(readIndex < 0)
+            return DELAY_BUFFER_SIZE + readIndex;
         
-        return rI;
+        return readIndex;
     }
     
     inline float linearInterpolation(float bufferValOne, float bufferValTwo, float frac)
@@ -124,13 +68,11 @@ public:
         return (bufferValTwo * frac) + (bufferValOne * (1 - frac));
     }
     
-    
 private:
     // write index
     int writeIndex;
     
-    // delayTime in miliseconds(ms), hardcoded for now
-    //int delayTime = 100;
+    // delay times + smoothing
     float leftDelayTime;
     juce::SmoothedValue<float, juce::ValueSmoothingTypes::Linear> mSmoothedLeftDelayTime;
     float rightDelayTime;
