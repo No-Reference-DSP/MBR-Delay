@@ -46,6 +46,7 @@ public:
     void updateHighpassCutoff(int hz);
     void updateLowpassCutoff(int hz);
     void reset();
+    void clearBuffers();
     
     inline void incrementWrite()
     {

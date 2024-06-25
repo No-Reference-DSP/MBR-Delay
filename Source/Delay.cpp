@@ -22,7 +22,7 @@
 
 // Constructor
 Delay::Delay()
-: writeIndex(0), mSampleRate(-1.0f) /*, mSmoothedLeftDelayTime(200), mSmoothedRightDelayTime(200),*/
+: writeIndex(0), mSampleRate(-1.0f), mFeedback(0) /*, mSmoothedLeftDelayTime(200), mSmoothedRightDelayTime(200),*/
 {
 }
 
@@ -137,19 +137,6 @@ void Delay::setTimeDelay(std::string name, int ms)
         mSmoothedRightDelayTime.setTargetValue(ms);
 }
 
-void Delay::reset()
-{
-    writeIndex = 0;
-    memset(leftDelayBuffer , 0, DELAY_BUFFER_SIZE);
-    memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE);
-    
-    //filter resets
-    mLeftLowpass.reset();       // left lowpass
-    mLeftHighpass.reset();      // left highpass
-    mRightLowpass.reset();      // right lowpass
-    mRightHighpass.reset();     // right highpass
-}
-
 void Delay::updateHighpassCutoff(int hz)
 {
     mLeftHighpass.setFrequencyCutoff(hz);
@@ -160,5 +147,25 @@ void Delay::updateLowpassCutoff(int hz)
 {
     mLeftLowpass.setFrequencyCutoff(hz);
     mRightLowpass.setFrequencyCutoff(hz);
+}
+
+void Delay::reset()
+{
+    writeIndex = 0;
+    memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE * sizeof(float));
+    memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE * sizeof(float));
+
+    //filter resets
+    mLeftLowpass.reset();       // left lowpass
+    mLeftHighpass.reset();      // left highpass
+    mRightLowpass.reset();      // right lowpass
+    mRightHighpass.reset();     // right highpass
+}
+
+void Delay::clearBuffers() //testing memory clear before with prepareToPlay and releaseResources in PluginProcessor
+{
+    writeIndex = 0;
+    memset(leftDelayBuffer, 0, DELAY_BUFFER_SIZE * sizeof(float));
+    memset(rightDelayBuffer, 0, DELAY_BUFFER_SIZE * sizeof(float));
 }
 // ==========================================================

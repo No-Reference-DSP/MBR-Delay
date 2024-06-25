@@ -84,17 +84,6 @@ public:
     juce::AudioProcessorValueTreeState treeState;
 
 private:
-    // Feedback vars
-    int mFeedback;
-//
-//    // Time Delay vars
-//    int mLeftDelay;
-//    int mRightDelay;
-//
-//    // Filter vars
-//    int mHighpass;
-//    int mLowpass;
-    
     // Delay Variables
     Delay mDelayBuffer;
     float mDryGain = 1.0f;

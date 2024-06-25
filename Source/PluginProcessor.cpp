@@ -129,12 +129,16 @@ void MBRDelayAudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlo
     mDelayBuffer.updateLowpassCutoff(20000);*/
     smoothedDry.reset(sampleRate, 0.01);
     smoothedWet.reset(sampleRate, 0.01);
+
+    //testing clear
+    mDelayBuffer.clearBuffers();
 }
 
 void MBRDelayAudioProcessor::releaseResources()
 {
     // When playback stops, you can use this as an opportunity to free up any
     // spare memory, etc.
+    mDelayBuffer.clearBuffers();
 }
 
 #ifndef JucePlugin_PreferredChannelConfigurations
