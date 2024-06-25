@@ -22,7 +22,7 @@
 
 // Constructor
 Delay::Delay()
-: writeIndex(0), mSampleRate(-1.0f), mFeedback(0) /*, mSmoothedLeftDelayTime(200), mSmoothedRightDelayTime(200),*/
+: writeIndex(0), mFeedback(0), mSampleRate(-1.0f) /*, mSmoothedLeftDelayTime(200), mSmoothedRightDelayTime(200),*/
 {
 }
 
