@@ -58,6 +58,9 @@
             file="Source/PluginEditor.cpp"/>
       <FILE id="mLU3W0" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
     </GROUP>
+    <FILE id="yBVJZ3" name="LICENSE.txt" compile="0" resource="1" file="LICENSE.txt"/>
+    <FILE id="iPXpU6" name="README.md" compile="0" resource="1" file="README.md"/>
+    <FILE id="qxGJGq" name="change_log.md" compile="0" resource="1" file="change_log.md"/>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>

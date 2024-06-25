@@ -5981,7 +5981,16 @@
     <None Include="..\..\Images\mbrBackground.png">
       <Filter>MBR-Delay\GUI\Images</Filter>
     </None>
-    <None Include="F:\JUCE\modules\juce_audio_devices\native\oboe\CMakeLists.txt">
+    <None Include="..\..\LICENSE.txt">
+      <Filter>MBR-Delay</Filter>
+    </None>
+    <None Include="..\..\README.md">
+      <Filter>MBR-Delay</Filter>
+    </None>
+    <None Include="..\..\change_log.md">
+      <Filter>MBR-Delay</Filter>
+    </None>
+    <None Include="C:\JUCE\modules\juce_audio_devices\native\oboe\CMakeLists.txt">
       <Filter>JUCE Modules\juce_audio_devices\native\oboe</Filter>
     </None>
     <None Include="F:\JUCE\modules\juce_audio_devices\native\oboe\README.md">
