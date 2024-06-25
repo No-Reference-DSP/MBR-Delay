@@ -5360,6 +5360,9 @@
     <None Include="..\..\Images\mbrBackground.png">
       <Filter>MBR-Delay\GUI\Images</Filter>
     </None>
+    <None Include="..\..\Images\MBR-Delay.png">
+      <Filter>MBR-Delay\GUI\Images</Filter>
+    </None>
     <None Include="..\..\LICENSE.txt">
       <Filter>MBR-Delay</Filter>
     </None>

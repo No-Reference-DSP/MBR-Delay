@@ -124,6 +124,7 @@
 		8F4CC4518FE427F86F8840D3 /* Delay.cpp */ /* Delay.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Delay.cpp; path = ../../Source/Delay.cpp; sourceTree = SOURCE_ROOT; };
 		903E97833E9399B5DD631C91 /* Info-Standalone_Plugin.plist */ /* Info-Standalone_Plugin.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-Standalone_Plugin.plist"; path = "Info-Standalone_Plugin.plist"; sourceTree = SOURCE_ROOT; };
 		92606D9FC65C0D78AC7CB7D7 /* PluginEditor.h */ /* PluginEditor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PluginEditor.h; path = ../../Source/PluginEditor.h; sourceTree = SOURCE_ROOT; };
+		931FC30EA453A79FEE5FA1AC /* MBR-Delay.png */ /* MBR-Delay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "MBR-Delay.png"; path = "../../Images/MBR-Delay.png"; sourceTree = SOURCE_ROOT; };
 		9328BB5D4687BE896581EE89 /* VST3 */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBR-Delay.vst3"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CC2C1F2243F8D124A3E8E0E /* AU */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MBR-Delay.component"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF56E5E6982C0EF2062C59F /* MixLAF.h */ /* MixLAF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MixLAF.h; path = ../../Source/MixLAF.h; sourceTree = SOURCE_ROOT; };
@@ -285,6 +286,7 @@
 				CB1FA626965DCBCFFFE40BB5,
 				2664E18B197DBB1100DB78C0,
 				17480159D4FE64685771439F,
+				931FC30EA453A79FEE5FA1AC,
 			);
 			name = Images;
 			sourceTree = "<group>";

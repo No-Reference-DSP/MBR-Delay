@@ -3096,6 +3096,7 @@
     <None Include="..\..\Images\LinkOff.png"/>
     <None Include="..\..\Images\LinkOn.png"/>
     <None Include="..\..\Images\mbrBackground.png"/>
+    <None Include="..\..\Images\MBR-Delay.png"/>
     <None Include="..\..\LICENSE.txt"/>
     <None Include="..\..\README.md"/>
     <None Include="..\..\change_log.md"/>

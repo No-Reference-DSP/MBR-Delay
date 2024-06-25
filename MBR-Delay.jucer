@@ -29,6 +29,7 @@
         <FILE id="dzeKf9" name="LinkOn.png" compile="0" resource="1" file="Images/LinkOn.png"/>
         <FILE id="S2b4re" name="mbrBackground.png" compile="0" resource="1"
               file="Images/mbrBackground.png"/>
+        <FILE id="aonSep" name="MBR-Delay.png" compile="0" resource="1" file="Images/MBR-Delay.png"/>
       </GROUP>
       <FILE id="PAlmCz" name="BypassLAF.h" compile="0" resource="0" file="Source/BypassLAF.h"/>
       <FILE id="Iv76wm" name="DelayLAF.h" compile="0" resource="0" file="Source/DelayLAF.h"/>
