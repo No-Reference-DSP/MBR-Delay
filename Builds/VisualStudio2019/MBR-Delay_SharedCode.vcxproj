@@ -3096,6 +3096,9 @@
     <None Include="..\..\Images\LinkOff.png"/>
     <None Include="..\..\Images\LinkOn.png"/>
     <None Include="..\..\Images\mbrBackground.png"/>
+    <None Include="..\..\LICENSE.txt"/>
+    <None Include="..\..\README.md"/>
+    <None Include="..\..\change_log.md"/>
     <None Include="C:\JUCE\modules\juce_audio_devices\native\oboe\CMakeLists.txt"/>
     <None Include="C:\JUCE\modules\juce_audio_devices\native\oboe\README.md"/>
     <None Include="C:\JUCE\modules\juce_audio_formats\codecs\flac\Flac Licence.txt"/>

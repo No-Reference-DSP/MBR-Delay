@@ -47,8 +47,17 @@ namespace BinaryData
     extern const char*   mbrBackground_png;
     const int            mbrBackground_pngSize = 6361;
 
+    extern const char*   LICENSE_txt;
+    const int            LICENSE_txtSize = 35129;
+
+    extern const char*   README_md;
+    const int            README_mdSize = 56;
+
+    extern const char*   change_log_md;
+    const int            change_log_mdSize = 0;
+
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 13;
+    const int namedResourceListSize = 16;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];
