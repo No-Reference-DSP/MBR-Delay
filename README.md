@@ -9,4 +9,4 @@
 ## Plans
 - Build a website to display the plugin and its features
 - Create and upload binary files to said website for easier downloads
-- Refactor codebase and address the remaining bugs
+- Refactor
