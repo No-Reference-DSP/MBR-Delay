@@ -2248,6 +2248,8 @@ static const unsigned char temp_binary_data_15[] =
 "# MBR-Delay\n"
 " A VST Delay Plugin created with JUCE and C++\n"
 "\n"
+" ![alt text](https://github.com/No-Reference-DSP/MBR-Delay/blob/main/Images/MBR-Delay.png?raw=true)\n"
+"\n"
 "# Build\n"
 " As of right now, the way only way to use this plugin is by cloning the repo onto your computer, opening the project file with the Projucer, and exporting to your IDE of choice. Then, building it and copying the VST3 file from your Debug/Release fold"
 "er to where ever you hold your VST3 Plugins.\n"
@@ -2292,7 +2294,7 @@ const char* getNamedResource (const char* resourceNameUTF8, int& numBytes)
         case 0xcf418275:  numBytes = 6361; return mbrBackground_png;
         case 0x4e6c5090:  numBytes = 61757; return MBRDelay_png;
         case 0x5a320952:  numBytes = 35129; return LICENSE_txt;
-        case 0x64791dc8:  numBytes = 551; return README_md;
+        case 0x64791dc8:  numBytes = 652; return README_md;
         case 0xc2743be1:  numBytes = 0; return change_log_md;
         default: break;
     }

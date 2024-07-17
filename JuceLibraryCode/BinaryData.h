@@ -54,7 +54,7 @@ namespace BinaryData
     const int            LICENSE_txtSize = 35129;
 
     extern const char*   README_md;
-    const int            README_mdSize = 551;
+    const int            README_mdSize = 652;
 
     extern const char*   change_log_md;
     const int            change_log_mdSize = 0;

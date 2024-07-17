@@ -43,7 +43,7 @@
 namespace ProjectInfo
 {
     const char* const  projectName    = "MBR-Delay";
-    const char* const  companyName    = "";
+    const char* const  companyName    = "No Reference DSP";
     const char* const  versionString  = "1.0.0";
     const int          versionNumber  = 0x10000;
 }

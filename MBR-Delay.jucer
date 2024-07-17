@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="VaRf2P" name="MBR-Delay" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              pluginManufacturer="Apedustrial Software" pluginVST3Category="Delay">
+              addUsingNamespaceToJuceHeader="0" jucerFormatVersion="1" pluginManufacturer="No Reference DSP"
+              pluginVST3Category="Delay" companyName="No Reference DSP" companyEmail="no.reference.music@gmail.com"
+              displaySplashScreen="1">
   <MAINGROUP id="DW7AHf" name="MBR-Delay">
     <GROUP id="{9B75919B-7456-68C6-0F2F-05575AA47068}" name="GUI">
       <GROUP id="{C8861C83-865C-70D4-CC2F-28CAD28C732F}" name="Images">

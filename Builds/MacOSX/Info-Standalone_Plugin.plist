@@ -8,7 +8,7 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.MBRDelay</string>
+    <string>com.NoReferenceDSP.MBRDelay</string>
     <key>CFBundleName</key>
     <string>MBR-Delay</string>
     <key>CFBundleDisplayName</key>
